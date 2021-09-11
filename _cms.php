@@ -35,7 +35,7 @@ bootstrap(array(
 	'path' => __DIR__,
 ));
 
-load_amadeus_module('tiddly');
+load_amadeus_module('markdown');
 
 render();
 ?>

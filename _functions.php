@@ -15,18 +15,46 @@ cs_var('sections', [
 function before_render() {
 	if (cs_var('node') == 'go') { include_once 'resources.php'; exit; }
 	$section = false;
+	$file = false;
 
 	foreach (cs_var('sections') as $s) {
-		
+		$path = cs_var('path') . '/' . $s['slug'] . '/';
+		$file = $path . cs_var('node') . (isset($s['subfolder']) && $s['subfolder'] == 'slug' && cs_var('page_parameter1') ? '/' . cs_var('page_parameter1') : '') . '.';
+		foreach (explode(', ', $s['extensions']) as $extn) {
+			if (file_exists($file . $extn)) {
+				cs_var('file', $file = $file . $extn);
+				cs_var('extn', $extn);
+				$section = $s;
+				break;
+			}
+		}
+		if ($section) break;
 	}
 
-	section_banner($section);
+	cs_var('section', $section);
+}
+
+function did_render_page() {
+	if ($section = cs_var('section')) {
+		$extn = cs_var('extn');
+		$file = cs_var('file');
+
+		section_banner($section);
+		if ($extn == 'txt') {
+			$raw = file_get_contents($file);
+			echo $raw && $raw[0] == '#' ? markdown($raw) : wpautop($raw);
+		}
+
+		return true;
+	}
+
+	return false;
 }
 
 function section_banner($section) {
 	$fol = $section ? $section['slug'] : 'assets';
 	$base = cs_var('url') . '/' . $fol . '/';
-	$path = cs_var('path') . '\\' . $fol . '\\';
+	$path = cs_var('path') . '/' . $fol . '/';
 
 	$banners = [
 		cs_var('node') . '.jpg',
@@ -39,15 +67,6 @@ function section_banner($section) {
 	if ($banner) echo sprintf('<img src="%s" alt="" class="img-fluid" />', $base . $banner, $section['name']);
 }
 
-function did_render_page() {
-	if ($section = cs_var('section')) {
-		echo wpautop(file_get_contents($section['file']));
-
-		return true;
-	}
-	return false;
-}
-
 function print_sections_menu() {
 	$nl = cs_var('nl');
 	echo '<div class="row menu">' . $nl;
@@ -55,8 +74,8 @@ function print_sections_menu() {
 
 	foreach (cs_var('sections') as $s) {
 		echo '	<div class="col-3">' . $nl;
-		echo '<h2>' . $s['name'] . '</h2>';
-		$path = cs_var('path') . '\\' . $s['slug'] . '\\';
+		echo '		<h2>' . $s['name'] . '</h2>' . $nl;
+		$path = cs_var('path') . '/' . $s['slug'] . '/';
 		$files = scandir($path);
 
 		$last_file = '';
