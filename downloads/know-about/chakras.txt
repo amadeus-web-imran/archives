@@ -1,0 +1,3 @@
+<a class="legacy" href="https://legacy.yieldmore.org/chakras" target="_blank">Legacy Chakras Page</a></blockquote>
+
+<iframe style="height: 90vh; width: 100%" src="https://legacy.yieldmore.org/blurbs/chakras.html"></iframe>

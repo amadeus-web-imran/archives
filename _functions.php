@@ -55,7 +55,8 @@ function before_render() {
 function is_section_file($s, $file) {
 	foreach (explode(', ', $s['extensions']) as $extn) {
 		if (file_exists($file . $extn)) {
-			cs_var('file', $file = $file . $extn);
+			cs_var('fwe', $file);
+			cs_var('file', $file . $extn);
 			cs_var('extn', $extn);
 			return true;
 		}
@@ -68,6 +69,25 @@ function did_render_page() {
 		$file = cs_var('file');
 
 		section_banner($section);
+
+		if ($fwe = cs_var('fwe')) {
+			foreach (explode(', ', $section['extensions']) as $e) {
+				if ($e == 'txt') continue;
+				if (file_exists($fwe . $e)) {
+					$url = cs_var('url') . str_replace('\\', '/', substr($fwe, strlen(cs_var('path')) + 1)) . $e;
+					if ($e == 'pdf') {
+						echo 'PDF';
+					} else if ($e == 'tsv') {
+						echo 'TSV';
+					} else if ($e == 'mp3') {
+						echo sprintf('<audio class="full-width" width="300" height="27" preload="none" controls><source src="%s" type="audio/mp3"></audio>', $url);
+					} else if ($e == 'jpg' || $e == 'png') {
+						echo 'IMAGE';
+					}
+				}
+			}
+		}
+
 		if ($extn == 'txt') {
 			$raw = file_get_contents($file);
 			echo $raw && $raw[0] == '#' ? markdown($raw) : wpautop($raw);
@@ -101,11 +121,13 @@ function print_sections_menu() {
 	$node = cs_var('node');
 	
 	if (cs_var('fol')) {
-		echo '	<div class="col-3">' . $nl;
+		echo '	<div class="col-md-6 col-12">' . $nl;
 		echo '		<h2 class="selected">&hellip; ' . cs_var('folName') . '</h2>' . $nl;
 
 		$last_file = '';
-		foreach (scandir(cs_var('fol')) as $i) {
+		$files = scandir(cs_var('fol'));
+		natsort($files);
+		foreach ($files as $i) {
 			$fwe = print_section_file($nl, $node, $last_file, $i);
 			$last_file = $fwe;
 		}
@@ -113,7 +135,7 @@ function print_sections_menu() {
 	}
 
 	foreach (cs_var('sections') as $s) {
-		echo '	<div class="col-3">' . $nl;
+		echo '	<div class="col-md-3 col-12">' . $nl;
 		echo '		<h2>' . $s['name'] . '</h2>' . $nl;
 		$path = cs_var('path') . '/' . $s['slug'] . '/';
 		$files = scandir($path);

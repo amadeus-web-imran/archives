@@ -17,8 +17,8 @@ bootstrap(array(
 	'start_year' => 2013,
 
 	'version' => [
-		'id' => '003',
-		'date' => '13 Jun 2021',
+		'id' => '001',
+		'date' => '21 Sep 2021',
 	],
 
 	'support_page_parameters' => true, //NB: For wellbeing / happyschools etc
@@ -28,8 +28,8 @@ bootstrap(array(
 	//'robots' => 'noindex',
 	'theme' => 'tm-xtra',
 
-	'styles' => ['%app-assets%styles', 'styles'],
-	'scripts' => ['main', 'courses', '%app-assets%ghosts', '%app-assets%blurbs'],
+	'styles' => ['styles'],
+	//'scripts' => ['main', 'courses', '%app-assets%ghosts', '%app-assets%blurbs'],
 	'head_hooks' => [__DIR__ . '/_ga.php'],
 	'url' => $local ? 'http://localhost/yieldmore/www/' : 'https://yieldmore.org/',
 	'path' => __DIR__,
