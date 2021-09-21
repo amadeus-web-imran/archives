@@ -1,0 +1,43 @@
+<a class="g-doc" href="https://docs.google.com/document/d/1EGZWGOlUBgZqeRUTmLpSYOV7aslrD25EUfwbiWAASrk/edit?usp=sharing" target="_blank">Open the Profile of Mustafa Badsha</a>
+
+<div class="row">
+	<div class="col-md-4 col xs-12">
+		<b class="name">ENABLER</b> is an <b>emerging movement</b> and a <b>voluntary welfare initiative</b> committed to <b>empower marginalised groups</b> and <b>members of economically weaker sections</b> of society with knowledge, skills, and a host of resources and referrals needed to strive and excel in the ever-changing world of today.
+
+		Initiated, propelled and powered by professionals with vision, energy, experience, resources and the spirit to rise above the usual, <b class="name">ENABLER</b> is rapidly gathering momentum as a socio-economic movement, creating opportunities to move forward.
+
+		The aim of <b class="name">ENABLER</b> is to produce <b>high caliber individuals</b> committed to establish a society based on <b>Truth, Justice, Equality, and Fairness</b>, beyond the borders of social class, caste, creed and religion viewing humanity and the World as one Global Entity.
+	</div>
+	<div class="col-md-4 col xs-12 middle">
+		<h2>Our Services</h2>
+		<ol>
+			<li>"Economic stimulus" programs and activities</li>
+			<li>Crisis intervention</li>
+			<li>Individual / Family counselling</li>
+			<li>Sponsorship of students / trainees pursuing careers and jobs</li>
+			<li>Design and development of CSR (Corporate Social Responsibility) projects</li>
+			<li>Referral services (related to internship, training and employment)</li>
+			<li>Information & assistance</li>
+			<li>Resource mobilisation (both material and financial)</li>
+			<li>Production of documentary films related to socio-economic issues</li>
+			<li>Production of teaching materials for print and digital purposes</li>
+		</ol>
+	</div>
+	<div class="col-md-4 col xs-12">
+		<ol start="11">
+			<li>Liaison / representation with government departments / hospitals / police / NGOs / Employer etc.</li>
+			<li>News producers for Social Media</li>
+			<li>Working with entrepreneurs to produce realistic curriculum to make education and training more relevant, purposeful and meaningful</li>
+			<li>Research - Educational research / trade / consumer research</li>
+			<li>Supporting garbage segregation and recycling initiatives</li>
+			<li>Repositioning business and brands</li>
+			<li>Grooming aspiring individuals to become responsible and accountable leaders</li>
+		</ol>
+	</div>
+</div>
+
+<hr />
+
+<div class="enabler-cta">
+	<a class="name" href="tel:+919840023721">for further details<wbr />, contact:<wbr /><nobr>MUSTAFA BADSHA</nobr> <nobr>on 98400 23721</nobr></a>
+</div>

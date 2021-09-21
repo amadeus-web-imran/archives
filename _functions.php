@@ -6,10 +6,12 @@ function active_if($node) {
 }
 
 cs_var('sections', [
-	['name' => 'Content', 'slug' => 'pages', 	'extensions' => 'txt'],
-	['name' => 'People', 'slug' => 'authors', 	'extensions' => 'txt', 'subfolder' => 'flat'],
-	['name' => 'AM Drive', 'slug' => 'downloads', 'extensions' => 'pdf, mp3', 'content' => 'txt', 'prepend' => 'jpg', 'subfolder' => 'slug'],
-	['name' => 'Resources', 'slug' => 'data', 		'extensions' => 'tsv'],
+	['name' => 'Content',	'slug' => 'pages', 		'extensions' => 'txt'],
+	['name' => 'Articles',	'slug' => 'authors', 	'extensions' => 'txt', 'subfolder' => 'flat'],
+	['name' => 'People',	'slug' => 'people', 	'extensions' => 'txt'],
+	['name' =>'Initiatives','slug' => 'initiatives','extensions' => 'txt'],
+	['name' => 'AM Drive',	'slug' => 'downloads',	'extensions' => 'pdf, mp3', 'content' => 'txt', 'prepend' => 'jpg', 'subfolder' => 'slug'],
+	['name' => 'Resources',	'slug' => 'data', 		'extensions' => 'tsv'],
 ]);
 
 function before_render() {

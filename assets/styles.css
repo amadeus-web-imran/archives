@@ -28,6 +28,7 @@
 .video-container { position: relative; width: 100%; height: 0; padding-bottom: 56.25%; margin-bottom: 20px; }
 .video-container iframe { position: absolute; top: 0; left: 0; width: 100%; height: 100%; }
 
+blockquote ul { font-size: 85%!important; margin-left: 20px; }
 
 .blurbs-container { margin-top: 20px; height: calc(100% - 80px); }
 
