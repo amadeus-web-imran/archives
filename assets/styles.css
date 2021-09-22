@@ -8,6 +8,8 @@
 .amadeus-credits img { vertical-align: middle!important; } /* TODO: how to change in theme */
 
 .tm-main blockquote { margin-left: 10px; border-left: 6px solid #666; padding: 15px; }
+.tm-main h1:not(.heading) { margin-top: 40px; }
+.tm-main h2, .tm-main h3 { margin-top: 20px; }
 
 .files .selected { background-color: rgb(130,198,142); }
 .files a { display: block; }

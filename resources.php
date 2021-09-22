@@ -6,6 +6,7 @@ $links = [
 	'spotify' => 'https://open.spotify.com/user/315lvkcpusfoibsyecvo45qb3cnm?si=e8dbc11e9c634fff|YM Spotify Playlists',
 	'stories' => 'https://docs.google.com/spreadsheets/d/1GW1ebEMLQWMlFHzmzpeh5pv1sl0x4018u0NbU-3o3ZE/edit?usp=sharing|YM Themes in Movies',
 	'mentoring-invite' => 'https://docs.google.com/document/d/1pruNDGoLXnrN9pK9dTtJGwxCTLTga-VHvd-BFefrcpI/edit?usp=sharing|Nom Mentoring Invitation for Yougsters',
+	'cwc' => 'https://www.facebook.com/groups/condolenceswithconcern/',
 ];
 
 $go = cs_var('node') == 'go';

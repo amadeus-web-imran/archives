@@ -99,20 +99,14 @@ function did_render_page() {
 	return false;
 }
 
-function section_banner($section) {
-	$fol = $section ? $section['slug'] : 'assets';
-	$base = cs_var('url') . '/' . $fol . '/';
-	$path = cs_var('path') . '/' . $fol . '/';
+function section_banner($section = false) {
+	if ($section && in_array('jpg', explode(', ', $section['extensions']))) return;
 
-	$banners = [
-		cs_var('node') . '.jpg',
-	];
+	$fwe = (cs_var('fwe') ? cs_var('fwe') : cs_var('path') . '\index.') . 'jpg';
+	if (!file_exists($fwe)) return;
 
-	$banner = false;
-	foreach ($banners as $b)
-		if (file_exists($path . $b)) { $banner = $b; break; }
-
-	if ($banner) echo sprintf('<img src="%s" alt="" class="img-fluid" />', $base . $banner, $section['name']);
+	$url = cs_var('url') . str_replace('\\', '/', substr($fwe, strlen(cs_var('path')) + 1));
+	echo sprintf('<img src="%s" alt="" class="img-fluid" />', $url, humanize(cs_var('node')));
 }
 
 function print_sections_menu() {
