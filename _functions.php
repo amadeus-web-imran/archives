@@ -10,8 +10,9 @@ cs_var('sections', [
 	['name' => 'Articles',	'slug' => 'authors', 	'extensions' => 'txt', 'subfolder' => true],
 	['name' => 'People',	'slug' => 'people', 	'extensions' => 'txt'],
 	['name' =>'Initiatives','slug' => 'initiatives','extensions' => 'txt'],
-	['name' => 'Folders',	'slug' => 'downloads',	'extensions' => 'mp3, png, jpg, txt, pdf', 'content' => 'txt', 'prepend' => '', 'subfolder' => true],
+	['name' => 'Folders',	'slug' => 'downloads',	'extensions' => 'mp3, png, jpg, txt, pdf', 'subfolder' => true],
 	['name' => 'Resources',	'slug' => 'data', 		'extensions' => 'tsv'],
+	['name' => 'Features',	'slug' => 'scripts', 	'extensions' => 'php'],
 ]);
 
 function before_render() {
@@ -78,6 +79,8 @@ function did_render_page() {
 					$url = cs_var('url') . str_replace('\\', '/', substr($fwe, strlen(cs_var('path')) + 1)) . $e;
 					if ($e == 'pdf') {
 						echo sprintf('<a href="%s" target="_blank">download :: %s.pdf</a><br /><iframe class="full-width" src="%s"></iframe>', $url, cs_var('node'), $url);
+					} else if ($e == 'php') {
+						include_once $fwe . 'php';
 					} else if ($e == 'tsv') {
 						echo 'TSV';
 					} else if ($e == 'mp3') {
