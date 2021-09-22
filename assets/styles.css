@@ -11,6 +11,9 @@
 .tm-main h1:not(.heading) { margin-top: 40px; }
 .tm-main h2, .tm-main h3 { margin-top: 20px; }
 
+a.hilight { background-color: #FAF05A; padding: 12px; border-radius: 12px; font-weight: bold; color: #D71459; }
+div.banner { text-align: center; background-color: #E3A09B; padding: 15px; }
+
 .files .selected { background-color: rgb(130,198,142); }
 .files a { display: block; }
 

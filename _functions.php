@@ -102,11 +102,11 @@ function did_render_page() {
 function section_banner($section = false) {
 	if ($section && in_array('jpg', explode(', ', $section['extensions']))) return;
 
-	$fwe = (cs_var('fwe') ? cs_var('fwe') : cs_var('path') . '\index.') . 'jpg';
+	$fwe = (cs_var('fwe') ? cs_var('fwe') : cs_var('path') . '/index.') . 'jpg';
 	if (!file_exists($fwe)) return;
 
 	$url = cs_var('url') . str_replace('\\', '/', substr($fwe, strlen(cs_var('path')) + 1));
-	echo sprintf('<img src="%s" alt="" class="img-fluid" />', $url, humanize(cs_var('node')));
+	echo sprintf('<div class="banner"><img src="%s" alt="" class="img-fluid" /></div>', $url, humanize(cs_var('node')));
 }
 
 function print_sections_menu() {
