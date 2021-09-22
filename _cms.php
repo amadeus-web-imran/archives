@@ -17,8 +17,8 @@ bootstrap(array(
 	'start_year' => 2013,
 
 	'version' => [
-		'id' => '001',
-		'date' => '21 Sep 2021',
+		'id' => '002',
+		'date' => '22 Sep 2021',
 	],
 
 	'support_page_parameters' => true, //NB: For wellbeing / happyschools etc
