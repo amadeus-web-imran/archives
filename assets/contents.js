@@ -6,10 +6,6 @@ $(document).ready(function() {
 
 	if (headings.length < 3) return;
 
-	headings
-		.addClass('go-to-toc')
-		.append('&nbsp;&nbsp;<i class="arrow up"></i>');
-
 	headings.each(function(ix, el) {
 		if (!toc) {
 			toc = $('<ul class="contents" />').insertBefore('#content');
@@ -17,6 +13,7 @@ $(document).ready(function() {
 			return; //skip page heading
 		}
 		toc.append(createHeading(el, toc));
+		$(el).addClass('go-to-toc').append('&nbsp;&nbsp;<i class="arrow up"></i>');
 	});
 
 	function createHeading(el) {

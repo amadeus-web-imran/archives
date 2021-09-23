@@ -28,20 +28,20 @@ Dec 3, 2020
 
 ## Class Format
 Class could contain the following elements
-<ol>
-    <li>Invocation</li>
-    <li>choice of prayer</li>
-    <li>homework review</li>
-    <li>5 questions</li>
-    <li>songs discovered</li>
-    <li>journal discussion</li>
-    <li>one goal and how to plan</li>
-    <li>writing time</li>
-    <li>topic of the day</li>
-    <li>review of hour gone</li>
-</ol>
 
-<h2>Wish Class - Notes</h2>
+1. Invocation
+2. choice of prayer
+3. homework review
+4. 5 questions
+5. songs discovered
+6. journal discussion
+7. one goal and how to plan
+8. writing time
+9. topic of the day
+10. review of hour gone
+
+
+## Wish Class - Notes
 It is difficult to find the line between gaining the student's interest and pushing them towards long term goals.
 The spirit of things is being received well but the stuedents are not so self motivated / organized.
 It is difficult to engage even 2 at the same time if most of the class is student led.

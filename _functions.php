@@ -127,7 +127,7 @@ function print_sections_menu($only_fol_menu = false) {
 	if ($only_fol_menu) {
 		$section = cs_var('section');
 		echo '	<div class="col-12">' . $nl;
-		echo '		<h2 class="selected">' . humanize($section['name']) . ' --> ' .  humanize(cs_var('folName')) . (cs_var('node') != cs_var('folName') ? ' --> ' . humanize(cs_var('node')) : '') . '</h2>' . $nl;
+		echo '		<h2 class="selected">' . humanize($section['name']) . ' <i class="arrow right"></i> ' .  humanize(cs_var('folName')) . (cs_var('node') != cs_var('folName') ? ' <i class="arrow right"></i> ' . humanize(cs_var('node')) : '') . '</h2>' . $nl;
 
 		$last_file = '';
 		$files = scandir(cs_var('fol'));
@@ -137,8 +137,8 @@ function print_sections_menu($only_fol_menu = false) {
 			$last_file = $fwe;
 		}
 		echo '	</div>' . $nl;
-	echo '</div>' . $nl;
-	return;
+		echo '</div>' . $nl;
+		return;
 	}
 
 	foreach (cs_var('sections') as $s) {

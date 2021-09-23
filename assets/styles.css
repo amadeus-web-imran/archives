@@ -16,13 +16,16 @@ ul.contents .indent-h3 { padding-left: 60px; }
 #content .go-to-toc { cursor: pointer; }
 /* https://www.w3schools.com/howto/howto_css_arrows.asp */
 .arrow { border: solid black; border-width: 0 3px 3px 0; display: inline-block; padding: 3px; }
+.arrow.right { transform: rotate(-45deg); -webkit-transform: rotate(-45deg); margin: 0 6px 4px 6px; }
+.arrow.left { transform: rotate(135deg); -webkit-transform: rotate(135deg); }
 .arrow.up { transform: rotate(-135deg); -webkit-transform: rotate(-135deg); }
+.arrow.down { transform: rotate(45deg); -webkit-transform: rotate(45deg); }
 
 .tm-main blockquote { margin-left: 10px; border-left: 6px solid #666; padding: 15px; }
 .tm-main h1:not(.heading) { margin-top: 40px; }
 .tm-main h2, .tm-main h3 { margin-top: 20px; }
 
-a.hilight { background-color: #FAF05A; padding: 12px; border-radius: 12px; font-weight: bold; color: #D71459; }
+a.hilight { background-color: #FAF05A; padding: 4px 8px 4px 8px; border-radius: 8px; font-weight: bold; color: #D71459; }
 div.banner { text-align: center; background-color: #E3A09B; padding: 15px; }
 .above-footer div.banner { margin-top: 30px; background-color: #A09BE3; }
 
