@@ -11,7 +11,7 @@ cs_var('sections', [
 	['name' => 'People',	'slug' => 'people', 	'extensions' => 'txt'],
 	['name' =>'Initiatives','slug' => 'initiatives','extensions' => 'txt'],
 	['name' => 'Folders',	'slug' => 'downloads',	'extensions' => 'mp3, png, jpg, txt, pdf', 'subfolder' => true],
-	['name' => 'Resources',	'slug' => 'data', 		'extensions' => 'tsv'],
+	//['name' => 'Resources',	'slug' => 'data', 		'extensions' => 'tsv'],
 	['name' => 'Features',	'slug' => 'scripts', 	'extensions' => 'php'],
 ]);
 
@@ -112,17 +112,21 @@ function section_banner($section = false) {
 	echo sprintf('<div class="banner"><img src="%s" alt="" class="img-fluid" /></div>', $url, humanize(cs_var('node')));
 }
 
-function print_sections_menu() {
+function print_fol_menu() {
+	if (cs_var('fol')) print_sections_menu(true);
+}
+
+function print_sections_menu($only_fol_menu = false) {
 	$nl = cs_var('nl');
 	echo $nl . $nl . '<div class="row menu">' . $nl;
 	$node = cs_var('node');
 	$empties = ['Cwsa'];
+	if (cs_var('folName')) $empties[] = humanize(cs_var('folName'));
 	
-	if (cs_var('fol')) {
-		echo '	<div class="col-md-6 col-12">' . $nl;
-		echo '		<h2 class="selected">&hellip; ' . cs_var('folName') . '</h2>' . $nl;
-
-		$empties[] = humanize(cs_var('folName'));
+	if ($only_fol_menu) {
+		$section = cs_var('section');
+		echo '	<div class="col-12">' . $nl;
+		echo '		<h2 class="selected">' . $section['name'] . ' --> ' .  cs_var('folName') . (cs_var('node') != cs_var('folName') ? ' --> ' . cs_var('node') : '') . '</h2>' . $nl;
 
 		$last_file = '';
 		$files = scandir(cs_var('fol'));
@@ -132,6 +136,8 @@ function print_sections_menu() {
 			$last_file = $fwe;
 		}
 		echo '	</div>' . $nl;
+	echo '</div>' . $nl;
+	return;
 	}
 
 	foreach (cs_var('sections') as $s) {
@@ -157,7 +163,7 @@ function print_section_file($nl, $node, $last_file, $file, $empties) {
 	$file = explode('.', $file, 2)[0];
 	if ($last_file == $file) return $file;
 	echo sprintf('		<a%s href="%s">%s</a>' . $nl,
-		($node == $file ? ' class="selected"' : ''), cs_var('url') . $file . '/', humanize($file, $empties));
+		($node == $file || cs_var('folName') == $file ? ' class="selected"' : ''), cs_var('url') . $file . '/', humanize($file, $empties));
 	return $file;
 }
 

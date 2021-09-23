@@ -23,7 +23,7 @@ function yas_lembas() {
 	</tr>';
 
 	$cols = 'object';
-	$file = __DIR__ . '/fundraisers.tsv';
+	$file = __DIR__ . '/help.tsv';
 	$rows = tsv_to_array(file_get_contents($file), $cols);
 	$link = '<a href="' . $link . '?who=%s">%s</a>';
 	$toggle = '<a href="javascript:" onclick="jQuery(this).closest(\'tr\').next().toggle()">&darr;</a>';

@@ -13,6 +13,7 @@
 
 a.hilight { background-color: #FAF05A; padding: 12px; border-radius: 12px; font-weight: bold; color: #D71459; }
 div.banner { text-align: center; background-color: #E3A09B; padding: 15px; }
+.above-footer div.banner { background-color: #A09BE3; }
 
 .files .selected { background-color: rgb(130,198,142); }
 .files a { display: block; }
