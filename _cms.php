@@ -17,20 +17,20 @@ bootstrap(array(
 	'start_year' => 2013,
 
 	'version' => [
-		'id' => '002',
-		'date' => '22 Sep 2021',
+		'id' => '003',
+		'date' => '23 Sep 2021',
 	],
 
 	'support_page_parameters' => true, //NB: For wellbeing / happyschools etc
 	'uses' => 'search1, social1, footer-message', //TODO: turn these back on
 	'menu_active_class' => 'active', //TODO: 
 
-	//'robots' => 'noindex',
 	'theme' => 'tm-xtra',
 
 	'styles' => ['styles'],
-	//'scripts' => ['main', 'courses', '%app-assets%ghosts', '%app-assets%blurbs'],
+	'scripts' => ['contents'],
 	'head_hooks' => [__DIR__ . '/_ga.php'],
+
 	'url' => $local ? 'http://localhost/yieldmore/www/' : 'https://yieldmore.org/',
 	'path' => __DIR__,
 ));

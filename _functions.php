@@ -70,7 +70,7 @@ function did_render_page() {
 		$file = cs_var('file');
 
 		section_banner($section);
-
+		echo '<div id="content">';
 		$done = false;
 		if ($fwe = cs_var('fwe')) {
 			foreach (explode(', ', $section['extensions']) as $e) {
@@ -96,6 +96,7 @@ function did_render_page() {
 			}
 		}
 
+		echo '</div>';
 		return true;
 	}
 
@@ -126,7 +127,7 @@ function print_sections_menu($only_fol_menu = false) {
 	if ($only_fol_menu) {
 		$section = cs_var('section');
 		echo '	<div class="col-12">' . $nl;
-		echo '		<h2 class="selected">' . $section['name'] . ' --> ' .  cs_var('folName') . (cs_var('node') != cs_var('folName') ? ' --> ' . cs_var('node') : '') . '</h2>' . $nl;
+		echo '		<h2 class="selected">' . humanize($section['name']) . ' --> ' .  humanize(cs_var('folName')) . (cs_var('node') != cs_var('folName') ? ' --> ' . humanize(cs_var('node')) : '') . '</h2>' . $nl;
 
 		$last_file = '';
 		$files = scandir(cs_var('fol'));
