@@ -6,11 +6,12 @@ While a blueprint of our plans for the workplace are soon to follow, we invite y
 
 > source: [Old Inputs from Imran](https://docs.google.com/document/d/1FWPYEoRPwRcbh3OzvEFPKwlpByUi5edwbAZw8sw7Hlk/edit?usp=sharing).
 
+<!--more-->
 An OEx Team is the core team of a company that drives its **Quality or Continuous Improvement Process**. Like any team, it needs goals, iterations, leads, stakeholders, process and a prioritization system. So we suggest creating an "Organizational Excellence" project in your **favourite Project Management Tool** and rolling up your sleeves!
 
 Quality not seen in the narrow way of testing each task, but as in the vision of Total Quality Management (Bill Creech)
 
-We suggest you first list the factors that affect the outcome, such as:
+We suggest you first list the factors that affect the outcome<!--more-->, such as:
 
  * Process
 > * Technology and Tools
