@@ -10,7 +10,8 @@ cs_var('sections', [
 	['name' => 'Articles',	'slug' => 'authors', 	'extensions' => 'txt', 'subfolder' => true],
 	['name' => 'People',	'slug' => 'people', 	'extensions' => 'txt'],
 	['name' =>'Initiatives','slug' => 'initiatives','extensions' => 'txt'],
-	['name' => 'Folders',	'slug' => 'downloads',	'extensions' => 'mp3, png, jpg, txt, pdf', 'subfolder' => true],
+	['name' => 'Nuggets',	'slug' => 'downloads',	'extensions' => 'mp3, png, jpg, txt, pdf', 'subfolder' => true],
+	['name' => 'Published',	'slug' => 'published',	'extensions' => 'mp3, png, jpg, txt, pdf', 'subfolder' => true],
 	//['name' => 'Resources',	'slug' => 'data', 		'extensions' => 'tsv'],
 	['name' => 'Features',	'slug' => 'scripts', 	'extensions' => 'php'],
 ]);
