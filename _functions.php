@@ -143,7 +143,7 @@ function print_sections_menu($only_fol_menu = false) {
 	}
 
 	foreach (cs_var('sections') as $s) {
-		echo '	<div class="col-md-3 col-12">' . $nl;
+		echo '	<div class="col-md-3 col-sm-6 col-12">' . $nl;
 		echo '		<h2>' . $s['name'] . '</h2>' . $nl;
 		$path = cs_var('path') . '/' . $s['slug'] . '/';
 		$files = scandir($path);
