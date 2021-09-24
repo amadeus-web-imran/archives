@@ -1,5 +1,5 @@
 $(document).ready(function() {
-	var toc = false;
+	var toc = false, menuToc = false;
 	var contents = false;
 
 	var headings = $('h1, h2, h3', $('#content'));
@@ -15,6 +15,8 @@ $(document).ready(function() {
 		toc.append(createHeading(el, toc));
 		$(el).addClass('go-to-toc').append('&nbsp;&nbsp;<i class="arrow up"></i>');
 	});
+    
+    $('.holds-menu-contents').append(toc.clone(true));
 
 	function createHeading(el) {
 		var li = $('<li class="indent-' + el.tagName.toLowerCase() + '">' + el.innerText + '</li>');
