@@ -6,6 +6,8 @@ function active_if($node) {
 }
 
 cs_var('sections', [
+	['name' => 'Offerings',	'slug' => 'core', 		'extensions' => 'txt'],
+	['name' => 'C. Conception',	'slug' => 'supraja','extensions' => 'mp3, png, jpg, txt, pdf', 'subfolder' => true],
 	['name' => 'Content',	'slug' => 'pages', 		'extensions' => 'txt'],
 	['name' => 'Articles',	'slug' => 'authors', 	'extensions' => 'txt', 'subfolder' => true],
 	['name' => 'People',	'slug' => 'people', 	'extensions' => 'txt'],
@@ -33,7 +35,7 @@ function before_render() {
 				break;
 			} else if (is_dir($path)) {
 				foreach (scandir($path) as $i) {
-					if ($i == '.' || $i == '..') continue;
+					if ($i == '.' || $i == '..' || $i[0] == '_') continue;
 					$d = $path . $i . '/';
 					if (is_section_file($s, $d . cs_var('node') . '.')) {
 						cs_var('fol', $d);
@@ -69,6 +71,12 @@ function did_render_page() {
 	if ($section = cs_var('section')) {
 		$extn = cs_var('extn');
 		$file = cs_var('file');
+
+		$about = cs_var('fol') . '_about.txt';
+		if (file_exists($about)) {
+			$about = file_get_contents($about);
+			echo '<div class="box-colour-2018">' . ($about && $about[0] == '#' ? markdown($about) : wpautop($about)) . '</div>';
+		}
 
 		section_banner($section);
 		echo '<div id="content">';
@@ -125,8 +133,8 @@ function print_sections_menu($only_fol_menu = false) {
 	$empties = ['Cwsa'];
 	if (cs_var('folName')) $empties[] = humanize(cs_var('folName'));
 	
+	$section = cs_var('section');
 	if ($only_fol_menu) {
-		$section = cs_var('section');
 		echo '	<div class="col-12">' . $nl;
 		echo '		<h2 class="selected">' . humanize($section['name']) . ' <i class="arrow right"></i> ' .  humanize(cs_var('folName')) . (cs_var('node') != cs_var('folName') ? ' <i class="arrow right"></i> ' . humanize(cs_var('node')) : '') . '</h2>' . $nl;
 
@@ -143,6 +151,7 @@ function print_sections_menu($only_fol_menu = false) {
 	}
 
 	foreach (cs_var('sections') as $s) {
+		if ($s['slug'] == 'supraja' && (!$section || $section['slug'] != $s['slug'])) continue;
 		echo '	<div class="col-md-3 col-sm-6 col-12">' . $nl;
 		echo '		<h2>' . $s['name'] . '</h2>' . $nl;
 		$path = cs_var('path') . '/' . $s['slug'] . '/';
@@ -161,7 +170,7 @@ function print_sections_menu($only_fol_menu = false) {
 }
 
 function print_section_file($nl, $node, $last_file, $file, $empties) {
-	if ($file == '.' || $file == '..') return $last_file;
+	if ($file == '.' || $file == '..' || $file[0] == '_') return $last_file;
 	$file = explode('.', $file, 2)[0];
 	if ($last_file == $file) return $file;
 	echo sprintf('		<a%s href="%s">%s</a>' . $nl,

@@ -13,10 +13,10 @@
 	<?php echo excerpt('/downloads/about-us/matrix.txt', 'matrix/', '&hellip; Read More'); ?>
 	
 	<h1>Children</h1>
-	<?php echo excerpt('/pages/children.txt', 'children/', '&hellip; Read More asbout Children and their Emotional Development'); ?>
+	<?php echo excerpt('/core/nom/children.txt', 'children/', '&hellip; Read More asbout Children and their Emotional Development'); ?>
 	
 	<h1>Education</h1>
-	<?php echo excerpt('/pages/education.txt', 'education/', '&hellip; Read More'); ?>
+	<?php echo excerpt('/core/nom/education.txt', 'education/', '&hellip; Read More'); ?>
 	
 	<h1>Evolving Sunlight</h1>
 	<?php echo excerpt('/initiatives/sunlight.txt', 'sunlight/', '&hellip; Read More'); ?>
