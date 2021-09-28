@@ -1,4 +1,8 @@
-# Wish Class - Spirit
+# Curation Based Education
+
+Recently begun, we are currenty developing the idea of "Curation Based Education" - an informal, teacher led story and identity exploration / emotion development and discussion for a group of 12 year olds. Curation meaning "inspired by music, movies and songs" - the themes in these stories offer a new perspective to the chidren and topics to resonate with and discuss. You can find the <a href="https://docs.google.com/document/d/1gM-SVYgkrtnkdGaY3mIcXLvlmv6AU5mZhzV7qEjHxvY/edit?usp=sharing" target="_blank">Cascade Batch 1 Lesson Plans</a> here. A <a href="https://www.canva.com/design/DAEqRdmTOWU/oSbjGzLm66jhrwHEeV2EAQ/view?utm_content=DAEqRdmTOWU&utm_campaign=designshare&utm_medium=link&utm_source=publishsharelink" target="_blank">flyer is also in the works</a>.
+
+## Class - Spirit
 
 Dear Parent,
 
@@ -7,6 +11,7 @@ We want you to feel safe leaving your children in our care. We want to know what
 We want to pique their curiosity for the world around, make them sensitive to things that are happening, help them introspect, feel free talking about fears and concerns, life's plans and doubts.<!--more-->
 
 We have the following objectives
+
 1. Make them feel comfortable and supported
 2. Help them choose learning and development activities
 3. Guide their thinking process
@@ -26,7 +31,7 @@ Warmly,
 Imran
 Dec 3, 2020
 
-## Class Format
+## Class - Format
 Class could contain the following elements
 
 1. Invocation
@@ -41,7 +46,7 @@ Class could contain the following elements
 10. review of hour gone
 
 
-## Wish Class - Notes
+## Class - Notes
 It is difficult to find the line between gaining the student's interest and pushing them towards long term goals.
 The spirit of things is being received well but the stuedents are not so self motivated / organized.
 It is difficult to engage even 2 at the same time if most of the class is student led.
