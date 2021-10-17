@@ -1,6 +1,14 @@
+<h1>Sri Aurobindo</h1>
+
+<h2>A brief biography</h2>
+
+[to be expanded]
+
 <h1>Complete Works of Sri Aurobindo</h1>
 
-In 1997, <a href="https://www.sriaurobindoashram.org/sriaurobindo/writings.php" target="_blank">the Sri Aurobindo Ashram began to publish the Complete Works of Sri Aurobindo</a> in a uniform library edition of 37 volumes. All the 36 text volumes have been issued. The remaining reference volume, with an index and glossary, is being prepared. The Complete Works contains all the writings published earlier in the 30-volume Sri Aurobindo Birth Centenary Library, as well as around 4000 pages of new texts.
+<blockquote>In 1997, <a href="https://www.sriaurobindoashram.org/sriaurobindo/writings.php" target="_blank">the Sri Aurobindo Ashram* began to publish the Complete Works of Sri Aurobindo</a> in a uniform library edition of 37 volumes. All the 36 text volumes have been issued. The remaining reference volume, with an index and glossary, is being prepared. The Complete Works contains all the writings published earlier in the 30-volume Sri Aurobindo Birth Centenary Library, as well as around 4000 pages of new texts.</blockquote>
+
+* his works became open domain in 2010 and thus are published here at YM.
 
 <?php
 $files = [
@@ -45,3 +53,13 @@ foreach ($files as $file) {
 	echo '<hr />';
 }
 ?>
+
+<h1>Sri Aurobindo at YieldMore.org (a 10 year journey)</h1>
+
+I will write more of my journey with Sri Aurobindo and the Mother - until then I let this picture speak:
+
+<div class="banner"><img src="../assets/sections/imran-mm.jpg" class="img-fluid" /></div>
+
+We, YieldMore.org had earlier published 4 of <a href="https://legacy.yieldmore.org/people/sri-aurobindo/bio/" target="_blank">Sri Aurobindo's works</a> viz: <a href="https://legacy.yieldmore.org/works/essays-on-the-gita/" target="_blank">Essays on the Gita</a>, <a href="https://legacy.yieldmore.org/works/hour-of-god/" target="_blank">Hour of God</a>, <a href="https://legacy.yieldmore.org/works/problem-of-rebirth/" target="_blank">The Problem of Rebirth</a> and <a href="https://legacy.yieldmore.org/works/savitri/" target="_blank">Savitri</a>. Some of his quotes on Hinduism, you will find on <a href="https://legacy.yieldmore.org/topics/religion/" target="_blank">our legacy religion page</a>.
+
+<a href="https://imran.yieldmore.org/" target="_blank">Imran</a> is a volunteer at <a href="https://sriaurobindodhama.org/" target="_blank">Sri Aurobindo Dhama</a> and has been published at <a href="https://journal.aurobharati.in/author/imran-ali-namazi/" target="_blank">Renaissance (an AuroBharati publication)</a>. Imran has <a href="https://imran.yieldmore.org/impelled/for/msa/" target="_blank">dedicated a few poems to Mother/Sri Aurobindo</a> and used to distribute copies of <a href="../sri-aurobindos-gita/">Sri Aurobindo's Gita</a>.
