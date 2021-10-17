@@ -13,6 +13,7 @@ cs_var('sections', [
 	['name' => 'People',	'slug' => 'people', 	'extensions' => 'txt'],
 	['name' =>'Initiatives','slug' => 'initiatives','extensions' => 'txt'],
 	['name' => 'Nuggets',	'slug' => 'downloads',	'extensions' => 'mp3, png, jpg, txt, pdf', 'subfolder' => true],
+	['name' => 'Devotional',	'slug' => 'devotional',	'extensions' => 'mp3, png, jpg, txt, pdf', 'subfolder' => true],
 	['name' => 'Published',	'slug' => 'published',	'extensions' => 'mp3, png, jpg, txt, pdf', 'subfolder' => true],
 	//['name' => 'Resources',	'slug' => 'data', 		'extensions' => 'tsv'],
 	['name' => 'Features',	'slug' => 'scripts', 	'extensions' => 'php'],
