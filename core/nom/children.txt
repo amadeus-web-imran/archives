@@ -31,22 +31,14 @@ Warmly,
 Imran
 Dec 3, 2020
 
-## Class - Format
-Class could contain the following elements
+# The CBE class
 
-1. Invocation
-2. choice of prayer
-3. homework review
-4. 5 questions
-5. songs discovered
-6. journal discussion
-7. one goal and how to plan
-8. writing time
-9. topic of the day
-10. review of hour gone
-
-
-## Class - Notes
-It is difficult to find the line between gaining the student's interest and pushing them towards long term goals.
-The spirit of things is being received well but the stuedents are not so self motivated / organized.
-It is difficult to engage even 2 at the same time if most of the class is student led.
+ - [Spotify Songs](../go/spotify/)
+   - [A ear for the profound](https://open.spotify.com/playlist/2ZPrU4ZRhBSsFSj9rhO7UM)
+   - [Women of Folk](https://open.spotify.com/playlist/37i9dQZF1DWSIcimvN18p3)
+   - [brain development](https://open.spotify.com/playlist/6y6L9HF0Nhv1CY2DGTJzIo) - to be vetted
+   - [YM School list - 2015](https://open.spotify.com/playlist/70dojEawWWoXFFLcPeXy79)
+   - [Soothing / Replenish](https://open.spotify.com/playlist/0cHcnTSTW9EWY70ITb7bAy) - [gaia](../creative-abundance/)
+   - []()
+ - [Regional](../multilingual/)
+   - [Kannadasan - Philosophical](https://open.spotify.com/playlist/52GMXPGGZAuqUR06K2hQSH)

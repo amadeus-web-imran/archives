@@ -66,6 +66,8 @@ h1.heading { border-bottom: 3px solid #666; background-color: #94559B; padding: 
 
 blockquote ul { font-size: 85%!important; margin-left: 20px; }
 
+#content ul ul { margin-left: 40px; }
+
 audio.full-width, video.full-width, iframe.full-width, img.full-width { width: 100%; }
 iframe.full-width, .full-height { height: 95vh; }
 
