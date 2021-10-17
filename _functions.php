@@ -76,7 +76,7 @@ function did_render_page() {
 		$about = cs_var('fol') . '_about.txt';
 		if (file_exists($about)) {
 			$about = file_get_contents($about);
-			echo '<div class="box-colour-2018">' . ($about && $about[0] == '#' ? markdown($about) : wpautop($about)) . '</div>';
+			echo '<div class="box-colour-four">' . ($about && $about[0] == '#' ? markdown($about) : wpautop($about)) . '</div>';
 		}
 
 		section_banner($section);
@@ -103,6 +103,14 @@ function did_render_page() {
 					}
 					$done = true;
 				}
+			}
+		} else {
+			$index = cs_var('fol') . '_index.php';
+			if (file_exists($index)) {
+				include_once $index;
+			} else if (file_exists($index = cs_var('fol') . '_index.txt')) {
+				$raw = file_get_contents($index);
+				echo $raw && $raw[0] == '#' ? markdown($raw) : wpautop($raw);
 			}
 		}
 

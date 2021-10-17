@@ -1,0 +1,47 @@
+<h1>Complete Works of Sri Aurobindo</h1>
+
+In 1997, <a href="https://www.sriaurobindoashram.org/sriaurobindo/writings.php" target="_blank">the Sri Aurobindo Ashram began to publish the Complete Works of Sri Aurobindo</a> in a uniform library edition of 37 volumes. All the 36 text volumes have been issued. The remaining reference volume, with an index and glossary, is being prepared. The Complete Works contains all the writings published earlier in the 30-volume Sri Aurobindo Birth Centenary Library, as well as around 4000 pages of new texts.
+
+<?php
+$files = [
+	'cwsa-01-early-cultural-writings',
+	'cwsa-02-collected-poems',
+	'cwsa-03-04-collected-plays-and-stories',
+	'cwsa-05-translations',
+	'cwsa-06-07-bandemataram',
+	'cwsa-08-karmayogin',
+	'cwsa-09-writings-in-bengali-and-sanskrit',
+	'cwsa-10-11-record-of-yoga',
+	'cwsa-12-essays-divine-and-human',
+	'cwsa-13-essays-in-philosophy-and-yoga',
+	'cwsa-14-vedic-and-philological-studies',
+	'cwsa-15-the-secret-of-the-veda',
+	'cwsa-16-hymns-to-the-mystic-fire',
+	'cwsa-17-isha-upanishad',
+	'cwsa-18-kena-and-other-upanishads',
+	'cwsa-19-essays-on-the-gita',
+	'cwsa-20-the-renaissance-in-india',
+	'cwsa-21-22-the-life-divine',
+	'cwsa-23-24-the-synthesis-of-yoga',
+	'cwsa-25-the-human-cycle',
+	'cwsa-26-the-future-poetry',
+	'cwsa-27-letters-on-poetry-and-art',
+	'cwsa-28-letters-on-yoga-i',
+	'cwsa-29-letters-on-yoga-ii',
+	'cwsa-30-letters-on-yoga-iii',
+	'cwsa-31-letters-on-yoga-iv',
+	'cwsa-32-the-mother-with-letters-on-the-mother',
+	'cwsa-33-34-savitri',
+	'cwsa-35-letters-on-himself-and-the-ashram',
+	'cwsa-36-autobiographical-notes',
+];
+
+foreach ($files as $file) {
+	$path = __DIR__ . '/' . $file . '.txt';
+	if (!file_exists($path)) continue; //TODO: remove this line after adding some basic content for empty files
+	echo '<h2><a href="../' . $file . '/">' . substr(humanize($file), 5) . '</a></h2>';
+	$raw = file_get_contents($path);
+	echo $raw && $raw[0] == '#' ? markdown($raw) : wpautop($raw);
+	echo '<hr />';
+}
+?>
