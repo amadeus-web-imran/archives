@@ -6,13 +6,13 @@ function active_if($node) {
 }
 
 cs_var('sections', [
-	['name' => 'Offerings',	'slug' => 'core', 		'extensions' => 'txt', 'subfolder' => true],
+	['name' => 'Main',		'slug' => 'core', 		'extensions' => 'txt', 'subfolder' => true],
 	['name' => 'C. Conception',	'slug' => 'supraja','extensions' => 'mp3, png, jpg, txt, pdf', 'subfolder' => true],
-	['name' => 'Content',	'slug' => 'pages', 		'extensions' => 'txt'],
-	['name' => 'Articles',	'slug' => 'authors', 	'extensions' => 'txt', 'subfolder' => true],
-	['name' => 'People',	'slug' => 'people', 	'extensions' => 'txt'],
-	['name' =>'Initiatives','slug' => 'initiatives','extensions' => 'txt'],
-	['name' => 'Nuggets',	'slug' => 'downloads',	'extensions' => 'mp3, png, jpg, txt, pdf', 'subfolder' => true],
+	['name' => 'Topics',	'slug' => 'pages', 		'extensions' => 'txt'],
+	['name' => 'We Support',	'slug' => 'people', 	'extensions' => 'txt'],
+	['name' =>'Incubating','slug' => 'initiatives','extensions' => 'txt'],
+	['name' => 'Articles By',	'slug' => 'authors', 	'extensions' => 'txt', 'subfolder' => true],
+	['name' => 'Inspire',	'slug' => 'downloads',	'extensions' => 'mp3, png, jpg, txt, pdf', 'subfolder' => true],
 	['name' => 'Devotional',	'slug' => 'devotional',	'extensions' => 'mp3, png, jpg, txt, pdf', 'subfolder' => true],
 	['name' => 'Published',	'slug' => 'published',	'extensions' => 'mp3, png, jpg, txt, pdf', 'subfolder' => true],
 	//['name' => 'Resources',	'slug' => 'data', 		'extensions' => 'tsv'],
