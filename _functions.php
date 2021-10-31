@@ -6,7 +6,7 @@ function active_if($node) {
 }
 
 cs_var('sections', [
-	['name' => 'Main',		'slug' => 'core', 		'extensions' => 'txt', 'subfolder' => true],
+	['name' => 'Main',		'slug' => 'core', 		'extensions' => 'mp3, png, jpg, txt, pdf', 'subfolder' => true],
 	['name' => 'C. Conception',	'slug' => 'supraja','extensions' => 'mp3, png, jpg, txt, pdf', 'subfolder' => true],
 	['name' => 'Topics',	'slug' => 'pages', 		'extensions' => 'txt'],
 	['name' => 'We Support',	'slug' => 'people', 	'extensions' => 'txt'],
