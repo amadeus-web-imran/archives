@@ -1,10 +1,9 @@
-We are #YASCOE = "Yet Another Spiritual Commune On Earth". See <a href="../marketplace/">how this "Conscious Marketplace" runs</a>
-
 <?php
 $scriptUrl = cs_var('url') . cs_var('node') . '/';
+$scriptDataUrl = cs_var('url') . cs_var('section')['slug'] . '/_data/';
 
 $cols = 'object';
-$items = tsv_to_array(file_get_contents(__DIR__ .'/explore.tsv'), $cols);
+$items = tsv_to_array(file_get_contents(__DIR__ .'/_data/explore.tsv'), $cols);
 
 $page = cs_var('page_parameter1');
 
@@ -16,21 +15,33 @@ if ($page) {
 			break;
 		}
 	}
-	
+
 	if (!$row) {
 		'<h2>' . $page . ' not found</h2?';
 	} else {
-		echo '<h2>Area In Focus: ' . $row[$cols->Area] . '</h2>';
-		echo '<p>' . $row[$cols->Introduction] . '</p>';
+		echo '<h1>Area In Focus: ' . $row[$cols->Area] . '</h1>';
+		echo '<h2>Introduction</h2>';
+		echo '<p>' . markdown($row[$cols->Introduction]) . '</p>';
 		if ($row[$cols->Website]) echo sprintf('<a class="btn btn-primary" href="https://%s" target="_blank">%s</a>', $row[$cols->Website], $row[$cols->Name]);
-		echo sprintf('<br /><br /><a class="btn btn-secondary" href="%s">%s</a>', $scriptUrl, 'Back to Exploring #YASCOE');
+
+		$file = __DIR__ .'/_data/' . $page;
+		if (file_exists($file . '.txt')) {
+			echo '<hr />';
+			if (file_exists($file . '.jpg'))
+				echo '<div class="banner"><img src="' . $scriptDataUrl . $page . '.jpg" class="img-fluid" /></div>';
+			echo markdown(file_get_contents($file . '.txt'));
+		}
+
+		echo sprintf('<br /><br /><a class="btn btn-secondary" href="%s">%s</a>', $scriptUrl, 'Back to Exploring our Conscious Marketplace - #YASCOE');
 		return;
 	}
 }
 
+echo 'We are #YASCOE = "Yet Another Spiritual Commune On Earth". See <a href="../marketplace/">how this "Conscious Marketplace" runs</a>.<br /><br />';
 echo '<h2>Explore our Conscious Marketplace</h2><ul>';
+
 foreach ($items as $r) {
-	echo '<li><h3>' . sprintf('<a href="%s">%s</a>', $scriptUrl . urlize($r[$cols->Area]) . '/', $r[$cols->Area]) . '</h3><p>' . $r[$cols->Introduction] . '<p></li>';
+	echo '<li><h3>' . sprintf('<a href="%s">%s</a>', $scriptUrl . urlize($r[$cols->Area]) . '/', $r[$cols->Area]) . '</h3><p>' . markdown($r[$cols->Introduction]) . '<p></li>';
 }
 
 echo '</ul>';
