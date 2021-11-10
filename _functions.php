@@ -136,7 +136,7 @@ function print_fol_menu() {
 
 function print_sections_menu($only_fol_menu = false) {
 	$nl = cs_var('nl');
-	echo $nl . $nl . '<div class="row menu">' . $nl;
+	echo $nl . $nl . '<div class="row menu if-not-mobile">' . $nl;
 	$node = cs_var('node');
 	$empties = ['Cwsa'];
 	if (cs_var('folName')) $empties[] = humanize(cs_var('folName'));

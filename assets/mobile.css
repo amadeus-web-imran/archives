@@ -13,6 +13,8 @@
 	transform: translateZ(0);
 }
 
+.if-not-mobile.hide { display: none; }
+
 .footer-static-box.show {
 	display: block;
 }
