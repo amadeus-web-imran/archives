@@ -25,7 +25,7 @@ bootstrap(array(
 
 	'theme' => 'tm-xtra',
 
-	'styles' => ['styles'],
+	'styles' => ['styles', 'mobile'],
 	'scripts' => ['contents'],
 	'head_hooks' => [__DIR__ . '/_ga.php', __DIR__ . '/mobile-app/head.php'],
 	'foot_hooks' => [__DIR__ . '/_ga.php', __DIR__ . '/mobile-app/foot.php'],
@@ -35,8 +35,10 @@ bootstrap(array(
 	'stats' => true,
 ));
 
-if (cs_var('mobile_app') && cs_var('node') == 'service-worker')
+if (cs_var('mobile_app') && cs_var('node') == 'service-worker') {
+	header('Content-Type: application/javascript');
 	die(file_get_contents(__DIR__ . '/mobile-app/service-worker.js'));
+}
 
 load_amadeus_module('markdown');
 

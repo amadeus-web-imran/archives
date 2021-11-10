@@ -14,13 +14,13 @@
       "purpose": "any maskable"
     }
   ],
-  "start_url": "../explore/start/",
+  "start_url": "../explore/start/?mobile=1",
   "scope": "../",
   "display": "standalone",
   "orientation": "portrait-primary",
-  "background_color": "#71D1F2",
-  "theme_color": "#FFFF8E",
+  "background_color": "#FFFF8E",
+  "theme_color": "#71D1F2",
   "description": "Join and 'Converse' with a network of people who care and want to 'Yield More Love'.",
   "dir": "ltr",
-  "lang": "en-US"
+  "lang": "en-GB"
 }

@@ -1,3 +1,5 @@
+<?php if (!cs_var('mobile_app')) return; ?>
+
 <script>
 if ('serviceWorker' in navigator) {
   window.addEventListener('load', function() {
@@ -11,3 +13,5 @@ if ('serviceWorker' in navigator) {
   });
 }
 </script>
+<div class="footer-static-box purple loading-use-pwa" style="display1: none"><a href="javascript:installPWA();">Add YML to the Home Screen</a>.</div>
+<script src="<?php echo  cs_var('url'); ?>mobile-app/app-sw-wrapper.js"></script>
