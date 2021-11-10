@@ -1,0 +1,26 @@
+{
+  "name": "Conscious Marketplace by YieldMore.org",
+  "short_name": "YML Network",
+  "icons": [
+    {
+      "src": "./mobile-icon-yieldmore.png",
+      "type": "image/png",
+      "sizes": "96x96"
+    },
+    {
+      "src": "./mobile-logo-yieldmore.png",
+      "type": "image/png",
+      "sizes": "512x512",
+      "purpose": "any maskable"
+    }
+  ],
+  "start_url": "../explore/start/",
+  "scope": "../",
+  "display": "standalone",
+  "orientation": "portrait-primary",
+  "background_color": "#71D1F2",
+  "theme_color": "#FFFF8E",
+  "description": "Join and 'Converse' with a network of people who care and want to 'Yield More Love'.",
+  "dir": "ltr",
+  "lang": "en-US"
+}

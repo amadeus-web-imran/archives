@@ -7,6 +7,7 @@ include_once '_functions.php';
 
 //cs_var('live', endsWith(__DIR__,'-live'));
 cs_var('local', $local = $_SERVER['HTTP_HOST'] ==='localhost');
+cs_var('mobile_app', true);
 
 bootstrap(array(
 	'name' => 'YieldMore.org',
@@ -26,11 +27,16 @@ bootstrap(array(
 
 	'styles' => ['styles'],
 	'scripts' => ['contents'],
-	'head_hooks' => [__DIR__ . '/_ga.php'],
+	'head_hooks' => [__DIR__ . '/_ga.php', __DIR__ . '/mobile-app/head.php'],
+	'foot_hooks' => [__DIR__ . '/_ga.php', __DIR__ . '/mobile-app/foot.php'],
 
 	'url' => $local ? 'http://localhost/yieldmore/www/' : 'https://yieldmore.org/',
 	'path' => __DIR__,
+	'stats' => true,
 ));
+
+if (cs_var('mobile_app') && cs_var('node') == 'service-worker')
+	die(file_get_contents(__DIR__ . '/mobile-app/service-worker.js'));
 
 load_amadeus_module('markdown');
 
