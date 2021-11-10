@@ -32,13 +32,15 @@ bootstrap(array(
 
 	'url' => $local ? 'http://localhost/yieldmore/www/' : 'https://yieldmore.org/',
 	'path' => __DIR__,
-	'stats' => true,
+	//'stats' => true,
 ));
 
 if (cs_var('mobile_app') && cs_var('node') == 'service-worker') {
 	header('Content-Type: application/javascript');
 	die(file_get_contents(__DIR__ . '/mobile-app/service-worker.js'));
 }
+
+include_once 'scripts/_areas.php';
 
 load_amadeus_module('markdown');
 

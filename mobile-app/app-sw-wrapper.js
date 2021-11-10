@@ -9,19 +9,19 @@ window.canMakePWA = false;
 
 function showOrHideCanMakePWA() {
 	if (window.canMakePWA)
-		$('.loading-use-pwa').show();
+		$('.if-can-use-pwa').addClass('show');
 	else
-		$('.loading-use-pwa').hide();
+		$('.if-can-use-pwa').removeClass('show');
 }
 
 if ('serviceWorker' in navigator) {
 	navigator.serviceWorker
 		.register('../service-worker')
 		.then(function () {
-		    console.log('ServiceWorker registration successful with scope: ', registration.scope);
-	})
+			console.log('ServiceWorker registration successful with scope: ', registration.scope);
+		})
 		.catch(function(err) {
-		  console.log('ServiceWorker registration failed: ', err);
+			console.log('ServiceWorker registration failed: ', err);
 		});
 }
 
