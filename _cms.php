@@ -32,7 +32,7 @@ bootstrap(array(
 
 	'url' => $local ? 'http://localhost/yieldmore/www/' : 'https://yieldmore.org/',
 	'path' => __DIR__,
-	//'stats' => true,
+	'no-local-stats' => true,
 ));
 
 if (cs_var('mobile_app') && cs_var('node') == 'service-worker') {

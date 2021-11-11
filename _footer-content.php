@@ -8,3 +8,4 @@ print_sections_menu();
 //pre_banner_quote();
 ?>
 </div>
+<div class="mobile-spacer if-mobile" style="padding-bottom: 40px"></div>
