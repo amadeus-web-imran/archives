@@ -16,9 +16,11 @@ function showOrHideCanMakePWA() {
 
 if ('serviceWorker' in navigator) {
 	navigator.serviceWorker
-		.register('../service-worker')
-		.then(function () {
+		.register(serviceWorkerUrl)
+		.then(function (registration) {
 			console.log('ServiceWorker registration successful with scope: ', registration.scope);
+			window.canMakePWA = true;
+			showOrHideCanMakePWA();
 		})
 		.catch(function(err) {
 			console.log('ServiceWorker registration failed: ', err);
