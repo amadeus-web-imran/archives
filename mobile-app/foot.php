@@ -1,8 +1,6 @@
 <?php if (!cs_var('mobile_app')) return; ?>
 
 <div class="footer-static-box if-can-use-pwa"><a href="javascript:installPWA();">Add YieldMore.org to the Home Screen</a>.</div>
-<script>var serviceWorkerUrl = "<?php echo cs_var('url');?>service-worker";</script>
-<script src="<?php echo  cs_var('url'); ?>mobile-app/app-sw-wrapper.js<?php echo version_querystring(); ?>"></script>
 
 <div class="footer-static-box if-mobile">
 	<div class="title">

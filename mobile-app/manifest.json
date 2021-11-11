@@ -10,8 +10,7 @@
     {
       "src": "./mobile-logo-yieldmore.png",
       "type": "image/png",
-      "sizes": "512x512",
-      "purpose": "any maskable"
+      "sizes": "512x512"
     }
   ],
   "start_url": "../explore/start/?mobile=1",
