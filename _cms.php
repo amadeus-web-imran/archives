@@ -40,9 +40,9 @@ if (cs_var('mobile_app') && cs_var('node') == 'service-worker') {
 }
 
 function is_multisite_section($slug, $indexToo) {
-	$home = $indexToo AND cs_var('node') == 'index';
+	$home = $indexToo && cs_var('node') == 'index2';
 
-	if ($home) {
+	if ($home || isset($_GET['ms'])) {
 		cs_var('node', 'index2');
 	}
 
@@ -62,9 +62,9 @@ function is_multisite_section($slug, $indexToo) {
 	return false;
 }
 
-/*if (is_multisite_section('services', true))
+if (is_multisite_section('services', true))
 	include_once 'services/_functions.php';
-else*/
+else
 	include_once '_functions.php';
 
 
