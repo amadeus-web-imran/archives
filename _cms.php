@@ -3,7 +3,6 @@ error_reporting(E_ALL);
 ini_set('display_errors', '1');
 
 include_once '../../amadeus/framework/core.php';
-include_once '_functions.php';
 
 //cs_var('live', endsWith(__DIR__,'-live'));
 cs_var('local', $local = $_SERVER['HTTP_HOST'] ==='localhost');
@@ -39,6 +38,35 @@ if (cs_var('mobile_app') && cs_var('node') == 'service-worker') {
 	header('Content-Type: application/javascript');
 	die(file_get_contents(__DIR__ . '/mobile-app/service-worker.js'));
 }
+
+function is_multisite_section($slug, $indexToo) {
+	$home = $indexToo AND cs_var('node') == 'index';
+
+	if ($home) {
+		cs_var('node', 'index2');
+	}
+
+	$fwe = cs_var('path') . '/' . $slug . '/' . cs_var('node');
+	$extensions = ['.txt', '.php'];
+
+	foreach ($extensions as $extn) {
+		if (file_exists($fwe . $extn)) {
+			cs_var('fwe', $fwe);
+			cs_var('extn', $extn);
+			cs_var('file', $fwe . $extn);
+			cs_var('multisite_section', $slug);
+			return true;
+		}
+	}
+
+	return false;
+}
+
+/*if (is_multisite_section('services', true))
+	include_once 'services/_functions.php';
+else*/
+	include_once '_functions.php';
+
 
 include_once 'scripts/_areas.php';
 

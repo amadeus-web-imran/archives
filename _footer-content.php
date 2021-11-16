@@ -1,3 +1,5 @@
+<?php if (cs_var('multisite_section')) { include_once cs_var('multisite_section') . '/_footer-content.php'; return; } ?>
+
 <hr />
 
 <div class="above-footer">

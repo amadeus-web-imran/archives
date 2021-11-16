@@ -1,3 +1,4 @@
+<?php if (cs_var('multisite_section')) { include_once cs_var('multisite_section') . '/_menu.php'; return; } ?>
 
                     <li class="tm-nav-item<?php active_if('index') ?>"><a href="<?php echo cs_var('url');?>" class="tm-nav-link">
                         <i class="fas fa-home"></i>
