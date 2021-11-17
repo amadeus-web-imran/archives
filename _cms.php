@@ -40,10 +40,11 @@ if (cs_var('mobile_app') && cs_var('node') == 'service-worker') {
 }
 
 function is_multisite_section($slug, $indexToo) {
-	$home = $indexToo && cs_var('node') == 'index2';
+	$home = $indexToo && cs_var('node') == 'index';
 
 	if ($home || isset($_GET['ms'])) {
 		cs_var('node', 'index2');
+		cs_var('page-name', 'index');
 	}
 
 	$fwe = cs_var('path') . '/' . $slug . '/' . cs_var('node');

@@ -2,12 +2,12 @@
 cs_var('mobile_app', false);
 
 cs_vars([
-	'name' => 'Yield More Services',
+	'name' => 'YieldMore Services',
 	'safeName' => 'yieldmore-services',
 
-	'byline' => 'Catalysing Growth',
+	'byline' => 'Growing In Harmony',
 	'footer-message' => 'Empowering Communities <b>with digital and media services</b>',
-	'start_year' => 2019,
+	'start_year' => false,
 	'theme' => 'cv-media-agency',
 	
 	'social' => [
