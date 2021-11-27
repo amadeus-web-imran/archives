@@ -2,7 +2,7 @@ $(document).ready(function() {
 	var toc = false, menuToc = false;
 	var contents = false;
 
-	var headings = $('h1, h2, h3', $('#content'));
+	var headings = $('h1, h2, h3', $('#content:not(.yms)'));
 
 	if (headings.length < 3) return;
 

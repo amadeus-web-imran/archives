@@ -11,17 +11,21 @@ cs_vars([
 	'theme' => 'cv-media-agency',
 	
 	'social' => [
+		/*
 		['type' => 'facebook', 'url' => 'https://www.facebook.com/YieldMoreOrg/'],
 		['type' => 'facebook', 'url' => 'https://www.facebook.com/groups/YieldMore'],
 		['type' => 'twitter', 'url' => 'https://twitter.com/YieldMoreOrg'],
 		['type' => 'instagram', 'url' => 'https://instagram.com/yieldmore_love'],
 		['type' => 'youtube', 'url' => 'https://www.youtube.com/channel/UCESPy4vMsnv3htBqvHJh51Q'],
 		['type' => 'youtube', 'url' => 'https://www.youtube.com/channel/UC_iHhVADe1oSjP3oAi5bnnw'],
+		*/
+
+		['type' => 'linkedin', 'url' => 'https://www.linkedin.com/company/yieldmore/?viewAsMember=true'],
 		['type' => 'github', 'url' => 'https://bitbucket.org/yieldmore/www/src/master/'],
 	],
 	
 	'contact' => [
-		'heading' => 'Main Office',
+		'heading' => 'Contact',
 		'address1' => '21/9 Ethiraj Lane, Egmore',
 		'address2' => 'Chennai 600 108, India',
 		'tel' => '+91-9841223313',

@@ -1,14 +1,14 @@
 <?php $theme = cs_var('theme_url'); $amadeusUrl = './amadeus-cms/'; ?>
 		<!-- Content
 		============================================= -->
-		<section id="content11">
+		<section id="content" class="yms">
 			<div class="content-wrap">
 
 				<div id="section-about" class="container-fluid page-section clearfix">
 
 					<div class="hero-headline bottommargin">
 						<h1>We are YieldMore Services,<br>Web Consulting Agency,<br>Based in Chennai, India.</h1>
-						<span>Newly established, we provide web development services to <a href="./why-conscious/">Conscious Businesses</a>, offering them to be a part of our <a href="./network/">"Yield More Love" Network</a>. We work primarily in our own platform "<a href="<?php echo $amadeusUrl; ?>">Amadeus CMS</a>" a powerful tool for programming any html template found online. We can extend our core team / train your staff / volunteers as required.</span>
+						<span>Newly established, we provide web development services to <a href="#./why-conscious/">Conscious Businesses</a>, offering them to be a part of our <a href="./network/">"Yield More Love" Network</a>. We work primarily in our own platform "<a href="<?php echo $amadeusUrl; ?>">Amadeus CMS</a>" a powerful tool for programming any html template found online. We can extend our core team / train your staff / volunteers as required.</span>
 					</div>
 
 					<a href="#" data-scrollto="#section-contact" data-easing="easeInOutExpo" data-speed="1250" data-offset="60" class="button button-dark button-black m-0">Drop us a Line</a>
@@ -17,7 +17,7 @@
 
 					<div id="section-services" class="page-section">
 
-						<h2 class="mb-5">Services.</h2>
+						<h2 class="mb-5">Features of <a href="<?php echo $amadeusUrl; ?>">Amadeus</a></h2>
 
 						<div class="row col-mb-50 mb-0">
 
@@ -305,9 +305,9 @@
 
 						</div><!-- #portfolio end -->
 
-					</div><?php } ?>
+					</div>
 
-					<div class="line topmargin-lg bottommargin-lg"></div>
+					<div class="line topmargin-lg bottommargin-lg"></div><?php } ?>
 
 					<div id="section-contact" class="page-section">
 
@@ -315,7 +315,7 @@
 
 						<div class="row clearfix">
 
-							<div class="col-lg-8">
+							<?php if (uses('contact')) { ?><div class="col-lg-8">
 
 								<div class="form-widget">
 
@@ -361,18 +361,18 @@
 
 								</div>
 
-							</div>
+							</div><?php } ?>
 
 							<div class="col-lg-4">
 								<h4><?php echo cs_sub_var('contact', 'heading'); ?>.</h4>
 
 								<div style="font-size: 16px; line-height: 1.7;">
-									<address style="line-height: 1.7;">
+									<?php if (uses('address')) { ?><address style="line-height: 1.7;">
 										<?php echo cs_sub_var('contact', 'address1'); ?><br>
 										<?php echo cs_sub_var('contact', 'address2'); ?><br>
 									</address>
 
-									<div class="clear topmargin"></div>
+									<div class="clear topmargin"></div><?php } ?>
 
 									<abbr title="Phone Number"><strong>Phone:</strong></abbr> <?php echo sprintf('<a href="tel:%s">%s</a>', cs_sub_var('contact', 'tel'), cs_sub_var('contact', 'tel')); ?><br>
 									<abbr title="WhatsApp"><strong>WhatsApp:</strong></abbr> <?php echo sprintf('<a href="https://wa.me/%s" target="_blank">%s</a>', str_replace('+', '', str_replace('-', '', cs_sub_var('contact', 'tel'))), cs_sub_var('contact', 'tel')); ?><br>
