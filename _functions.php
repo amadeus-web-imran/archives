@@ -123,7 +123,7 @@ function did_render_page() {
 function section_banner($section = false) {
 	if ($section && in_array('jpg', explode(', ', $section['extensions']))) return;
 
-	$fwe = (cs_var('fwe') ? cs_var('fwe') : cs_var('path') . (cs_var('node') == 'index' ? '/index.' : '/default.')) . 'jpg';
+	$fwe = (cs_var('fwe') ? cs_var('fwe') : cs_var('path') . '/default.') . 'jpg';
 	if (!file_exists($fwe)) return;
 
 	$url = cs_var('url') . str_replace('\\', '/', substr($fwe, strlen(cs_var('path')) + 1));

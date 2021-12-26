@@ -111,7 +111,7 @@
 
 							<div class="col-lg-5">
 
-								<h4>Clients Say.</h4>
+								<h4>Clients Say [Dummy Content].</h4>
 
 								<div class="fslider testimonial p-0 border-0 shadow-none" data-animation="slide" data-arrows="false">
 									<div class="flexslider">
@@ -120,8 +120,8 @@
 												<div class="testi-content">
 													<p>Similique fugit repellendus expedita excepturi iure perferendis provident quia eaque. Repellendus, vero numquam?</p>
 													<div class="testi-meta">
-														Steve Jobs
-														<span>Apple Inc.</span>
+														Bugs Bunny
+														<span>Looney Tunes Inc.</span>
 													</div>
 												</div>
 											</div>
@@ -129,8 +129,8 @@
 												<div class="testi-content">
 													<p>Natus voluptatum enim quod necessitatibus quis expedita harum provident eos obcaecati id culpa corporis molestias.</p>
 													<div class="testi-meta">
-														Collis Ta'eed
-														<span>Envato Inc.</span>
+														Macon Fallon
+														<span>Wild West Town-builders LLC.</span>
 													</div>
 												</div>
 											</div>
@@ -138,8 +138,8 @@
 												<div class="testi-content">
 													<p>Incidunt deleniti blanditiis quas aperiam recusandae consequatur ullam quibusdam cum libero illo rerum!</p>
 													<div class="testi-meta">
-														John Doe
-														<span>XYZ Inc.</span>
+														Sean Courtney
+														<span>Duffy Frieght Movers</span>
 													</div>
 												</div>
 											</div>

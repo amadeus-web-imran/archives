@@ -9,7 +9,7 @@ cs_var('local', $local = $_SERVER['HTTP_HOST'] ==='localhost');
 cs_var('mobile_app', true);
 
 bootstrap(array(
-	'name' => 'YieldMore.org',
+	'name' => 'The Yield More Love Network',
 	'safeName' => 'yieldmore',
 
 	'byline' => 'Triggering Dialogue and Action',
@@ -39,14 +39,7 @@ if (cs_var('mobile_app') && cs_var('node') == 'service-worker') {
 	die(file_get_contents(__DIR__ . '/mobile-app/service-worker.js'));
 }
 
-function is_multisite_section($slug, $indexToo) {
-	$home = $indexToo && cs_var('node') == 'index';
-
-	if ($home || isset($_GET['ms'])) {
-		cs_var('node', 'index2');
-		cs_var('page-name', 'index');
-	}
-
+function is_multisite_section($slug) {
 	$fwe = cs_var('path') . '/' . $slug . '/' . cs_var('node');
 	$extensions = ['.txt', '.php'];
 
@@ -56,6 +49,7 @@ function is_multisite_section($slug, $indexToo) {
 			cs_var('extn', $extn);
 			cs_var('file', $fwe . $extn);
 			cs_var('multisite_section', $slug);
+			cs_var('home_url', $slug . '/');
 			return true;
 		}
 	}
@@ -63,7 +57,7 @@ function is_multisite_section($slug, $indexToo) {
 	return false;
 }
 
-if (is_multisite_section('services', true))
+if (is_multisite_section('services'))
 	include_once 'services/_functions.php';
 else
 	include_once '_functions.php';
