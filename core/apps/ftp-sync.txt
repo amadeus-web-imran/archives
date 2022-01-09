@@ -1,0 +1,9 @@
+# FTP Sync [Download](../core/apps/FTP-Sync-latest.zip)
+
+** Watch folder and upload changes to website **
+
+ - For web developers
+ - Features: Drag-drop, add files by path, stop watching, have a list of projects and encrypt passwords.
+ - Roadmap: exclusion list, open containing folder
+ - Effort: Init - 2007 - 1 day, 2012-13 - 2 days
+ - Source code: [yieldmore/ivy](https://bitbucket.org/yieldmore/ivy/src/)
