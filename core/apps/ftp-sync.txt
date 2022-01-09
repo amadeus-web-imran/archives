@@ -1,4 +1,4 @@
-# FTP Sync [Download](../core/apps/FTP-Sync-latest.zip)
+# FTP Sync [Download](../core/apps/FTPSync-latest.zip)
 
 ** Watch folder and upload changes to website **
 
