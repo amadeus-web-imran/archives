@@ -1,0 +1,11 @@
+# About [Anjali Sharma](https://milaap.org/stories/anjali)
+
+<div class="banner"><img src="../core/bhairava/assets/anjali.jpg" class="img-fluid" /></div>
+
+Lorem ipsum dolor sit amet consectetuer adipiscing faucibus Nam malesuada eu. Facilisis.
+
+Lorem Vestibulum diam turpis lacinia urna facilisi in pellentesque elit.
+
+Dui lobortis augue habitasse eget Curabitur id condimentum semper ultrices lacinia. Quam sem sodales congue.
+
+Sed semper nibh urna ornare tellus pellentesque lobortis Cras auctor nibh. Tortor.

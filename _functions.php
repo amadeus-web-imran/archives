@@ -179,7 +179,8 @@ function print_sections_menu($only_fol_menu = false) {
 
 function print_section_file($nl, $node, $last_file, $file, $empties) {
 	if ($file == '.' || $file == '..' || $file[0] == '_'
-		OR endsWith($file, '.xml') OR endsWith($file, '.zip'))
+		|| $file == 'assets' || $file == 'images'
+		|| endsWith($file, '.xml') || endsWith($file, '.zip'))
 		return $last_file;
 	$file = explode('.', $file, 2)[0];
 	if ($last_file == $file) return $file;
