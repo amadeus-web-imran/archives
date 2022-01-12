@@ -1,0 +1,5 @@
+# Little Things
+
+<p>Here is a list of <a href="https://docs.google.com/document/d/1zMggE_Z5BTzCi0x5URJPaMuZCBnOSpkP1GlasZUZr40/" target="_blank">15 things to do</a> - one each day. <a href="https://www.facebook.com/groups/1481848415178729/post_tags/?post_tag_id=3279077788789107" target="_blank">Join us on Facebook</a> to discuss it and many more. See the <a href="../assets/posters/little-things.html" target="_blank">visually rich InstaGram like version</a> or see it <a href="https://www.instagram.com/yieldmore_team/" target="_blank">on InstaGram</a>.</p>
+
+<iframe src="../assets/posters/little-things.html" style="height: 90vh; width: 100%"></iframe>

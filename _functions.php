@@ -7,16 +7,16 @@ function active_if($node) {
 
 cs_var('sections', [
 	['name' => 'Main',		'slug' => 'core', 		'extensions' => 'mp3, png, jpg, txt, pdf', 'subfolder' => true],
-	['name' => 'C. Conception',	'slug' => 'supraja','extensions' => 'mp3, png, jpg, txt, pdf', 'subfolder' => true],
-	['name' => 'Topics',	'slug' => 'pages', 		'extensions' => 'txt'],
-	['name' => 'We Support',	'slug' => 'people', 	'extensions' => 'txt'],
 	['name' =>'Incubating','slug' => 'initiatives','extensions' => 'txt'],
-	['name' => 'Articles By',	'slug' => 'authors', 	'extensions' => 'txt', 'subfolder' => true],
+	['name' => 'Articles',	'slug' => 'authors', 	'extensions' => 'txt', 'subfolder' => true],
+	['name' => 'We Support',	'slug' => 'people', 	'extensions' => 'txt', 'subfolder' => true],
+	['name' => 'C. Conception',	'slug' => 'supraja','extensions' => 'mp3, png, jpg, txt, pdf', 'subfolder' => true],
 	['name' => 'Inspire',	'slug' => 'downloads',	'extensions' => 'mp3, png, jpg, txt, pdf', 'subfolder' => true],
 	['name' => 'Devotional',	'slug' => 'devotional',	'extensions' => 'mp3, png, jpg, txt, pdf', 'subfolder' => true],
 	['name' => 'Published',	'slug' => 'published',	'extensions' => 'mp3, png, jpg, txt, pdf', 'subfolder' => true],
+	['name' => 'Topics',	'slug' => 'pages', 		'extensions' => 'txt'],
 	//['name' => 'Resources',	'slug' => 'data', 		'extensions' => 'tsv'],
-	['name' => 'Features',	'slug' => 'scripts', 	'extensions' => 'php'],
+	['name' => 'AM Community',	'slug' => 'scripts', 	'extensions' => 'php'],
 ]);
 
 function before_render() {
