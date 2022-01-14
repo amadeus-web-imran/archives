@@ -24,6 +24,9 @@ foreach ($articles as $item) {
 	<article class="col-12 col-md-6 tm-post">
 		<hr class="tm-hr-primary">
 		<a href="<?php echo $slug; ?>" class="effect-lily tm-post-link tm-pt-60">
+			<div class="tm-post-link-inner">
+				<img src="assets/pages/<?php echo $name; ?>.jpg" alt="<?php echo $name; ?>" class="img-fluid">
+			</div>
 			<span class="position-absolute tm-new-badge"><?php echo $fol; ?></span>
 			<h2 class="tm-pt-30 tm-color-primary tm-post-title"><?php echo humanize($name); ?></h2>
 		</a>					

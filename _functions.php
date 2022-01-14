@@ -122,19 +122,24 @@ function did_render_page() {
 
 function site_humanize($text) {
 	if ($match = [
-            'brics' => 'BRICS - Sensory Enhancement program for Children',
-            'children' => 'Curation Based Education for Children',
-            'classroom' => 'Classroom Suggestions and Guidelines',
-            'creative-abundance' => 'Creative Abundance - Article on Perspectives',
-            'creative-expression' => 'Creative Expression - 8 Week Workshop for Children',
-            'education' => 'Education - Introduction Parent and Teacher',
-            'nom' => 'Project Nom - Wisdom Preservation Initiative',
-            'pact' => 'PACT - FORUM / Resource Center for Parents and Teachers',
-            'serenity' => 'Serenity - Affirmations and Healing',
-            'teachers' => 'Teachers in our Network - Would you Join?',
-            'words' => 'Healing Through Words (group and individual sessions)',
-            //'' => '',
-        ]) {
+		'spirit' => 'A spirit of oneness to permeate the world',
+		'welcome' => 'Wecome Note - circa 2021',
+		'matrix' => 'Matrix of Channels and Areas',
+		'sunlight' => 'Evolving Sunlight - a quality practice',
+		//nom
+		'brics' => 'BRICS - Sensory Enhancement program for Children',
+		'children' => 'Curation Based Education for Children',
+		'classroom' => 'Classroom Suggestions and Guidelines',
+		'creative-abundance' => 'Creative Abundance - Article on Perspectives',
+		'creative-expression' => 'Creative Expression - 8 Week Workshop for Children',
+		'education' => 'Education - Introduction for Parent and Teacher',
+		'nom' => 'Project Nom - Wisdom Preservation Initiative',
+		'pact' => 'PACT - FORUM / Resource Center for Parents and Teachers',
+		'serenity' => 'Serenity - Affirmations and Healing',
+		'teachers' => 'Teachers in our Network - Would you Join?',
+		'words' => 'Healing Through Words (group and individual sessions)',
+		//'' => '',
+				]) {
 		$key = urlize($text);
 		if (isset($match[$key])) return $match[$key];
 	}
