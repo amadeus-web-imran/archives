@@ -3,24 +3,35 @@
 
 <div id="content">
 	<h1 class="heading">Welcome to YieldMore.org</h1>
-	
-	<h1>Spirit</h1>
-	<?php echo excerpt('/core/about-us/spirit.txt', 'spirit/', '&hellip; Read More about our Founding Principles'); ?>
-	
-	<h1>Imran's Welcome</h1>
-	<?php echo excerpt('/authors/imran/welcome.txt', 'welcome/', '&hellip; Read Welcome - dated Apr 2021'); ?>
-	
-	<h1>The YM Matrix</h1>
-	<?php echo excerpt('/core/about-us/matrix.txt', 'matrix/', '&hellip; Read More'); ?>
-	
-	<h1>Children</h1>
-	<?php echo excerpt('/core/project-nom/children.txt', 'children/', '&hellip; Read More about Children and their Emotional Development'); ?>
-	
-	<h1>Education</h1>
-	<?php echo excerpt('/core/project-nom/education.txt', 'education/', '&hellip; Read More'); ?>
-	
-	<h1>Evolving Sunlight</h1>
-	<?php echo excerpt('/initiatives/sunlight.txt', 'sunlight/', '&hellip; Read More'); ?>
-	
-	Understand us from <a class="hilight" href="matrix/">our matrix</a>,  <a class="hilight" href="sunlight/">evolving sunlight</a> or <a class="hilight" href="education/">education</a> and  <a class="hilight" href="children/">curation based education</a>.
+
+<div class="row tm-row">
+<?php
+$articles = [
+	'/core/about-us/spirit',
+	'/authors/imran/welcome',
+	'/core/about-us/matrix',
+	'/core/project-nom/children',
+	'/core/project-nom/education',
+	'/core/evolve/sunlight',
+];
+foreach ($articles as $item) {
+	$bits = explode('/', $item);
+	$slug = ($name = array_pop($bits)) . '/';
+	$fol = array_pop($bits);
+	$item .= '.txt';
+	$text = excerpt($item, $slug, '&hellip; Read More');
+	?>
+	<article class="col-12 col-md-6 tm-post">
+		<hr class="tm-hr-primary">
+		<a href="<?php echo $slug; ?>" class="effect-lily tm-post-link tm-pt-60">
+			<span class="position-absolute tm-new-badge"><?php echo $fol; ?></span>
+			<h2 class="tm-pt-30 tm-color-primary tm-post-title"><?php echo humanize($name); ?></h2>
+		</a>					
+		<p class="tm-pt-30">
+			<?php echo $text; ?>
+		</p>
+	</article>
+	<?php } ?>
+	</div>
 </div>
+

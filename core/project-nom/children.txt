@@ -5,10 +5,10 @@ Recently begun, we are currenty developing the idea of "Curation Based Education
 ## Class - Spirit
 
 Dear Parent,
-
+<!--more-->
 We want you to feel safe leaving your children in our care. We want to know what hopes and dreams you have for them and we want to hear from them direct what all they would like to do.
 
-We want to pique their curiosity for the world around, make them sensitive to things that are happening, help them introspect, feel free talking about fears and concerns, life's plans and doubts.<!--more-->
+We want to pique their curiosity for the world around, make them sensitive to things that are happening<!--more-->, help them introspect, feel free talking about fears and concerns, life's plans and doubts.
 
 We have the following objectives
 

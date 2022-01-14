@@ -4,7 +4,7 @@ First described <a href="http://legacy.yieldmore.org/about/?node=pact" target="_
 
 We now invite teachers and parents of a school to share their thoughts with us both <a class="fb" href="https://www.facebook.com/groups/pactym/" target="_blank">on our FB group</a> as well as <a href="https://groups.google.com/g/pact-ym" target="_blank">on Google Groups</a>.
 
-We will, in time have information on how to setup a Chapter / Center and have FAQs on the value PACT adds to the education sector in our <a class="g-doc" href="https://docs.google.com/document/d/1wjCEURirVrhS4ykMD22LvCAh0EewlNxN0sFVibQ123c/edit?usp=sharing" target="_blank">Definitive PACT Guide</a>.<!--more-->
+We will, in time have information on how to setup a Chapter / Center and have FAQs on the value PACT adds to the education sector in our <a class="g-doc" href="https://docs.google.com/document/d/1wjCEURirVrhS4ykMD22LvCAh0EewlNxN0sFVibQ123c/edit?usp=sharing" target="_blank">Definitive PACT Guide</a>.
 
 # Peer Education and Feedback Form
 
@@ -20,9 +20,9 @@ We will, in time have information on how to setup a Chapter / Center and have FA
 # Respected Teacher / Parent,
 
 We would like you to join our <a href="https://groups.google.com/g/pact-ym" target="_blank">education forum (on Google Groups)</a> to discuss our <a href="../wish-class/">Wish Class</a> and other programs and ideas that we promote as well as spread word about formulae that have worked for you and courses / programs that you find useful.
-
-The Wish Class aims to engage the children in self-chosen co and extra curricular activities in the school, both during and after school hours, in a non disruptive manner and is currently being piloted by <a href="../imran-edu/">Imran</a>.
-
+<!--more-->
+The Wish Class aims to engage the children in self-chosen co and extra curricular activities in the school, both during and after school hours, in a non disruptive manner and is currently being piloted by <a href="../teachers/#imran">Imran</a>.
+<!--more-->
 We request you to get your parents and teachers to interact more frequently and network with other PTA groups from other schools on our forum.
 
 Ask for a sample wish class which can be arranged online.
