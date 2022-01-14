@@ -16,7 +16,7 @@ bootstrap(array(
 	'footer-message' => 'To provide online resources that inspire and assist and <b>access to people who care</b>',
 	'start_year' => 2013,
 
-	'version' => [ 'id' => '008', 'date' => '11 Nov 2021' ],
+	'version' => [ 'id' => '009', 'date' => '14 Jan 2022' ],
 
 	'support_page_parameters' => true, //NB: For wellbeing / happyschools etc
 	'uses' => 'search1, social1, footer-message', //TODO: turn these back on

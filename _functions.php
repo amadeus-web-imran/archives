@@ -120,10 +120,31 @@ function did_render_page() {
 	return false;
 }
 
+function site_humanize($text) {
+	if ($match = [
+            'brics' => 'BRICS - Sensory Enhancement program for Children',
+            'children' => 'Curation Based Education for Children',
+            'classroom' => 'Classroom Suggestions and Guidelines',
+            'creative-abundance' => 'Creative Abundance - Article on Perspectives',
+            'creative-expression' => 'Creative Expression - 8 Week Workshop for Children',
+            'education' => 'Education - Introduction Parent and Teacher',
+            'nom' => 'Project Nom - Wisdom Preservation Initiative',
+            'pact' => 'PACT - FORUM / Resource Center for Parents and Teachers',
+            'serenity' => 'Serenity - Affirmations and Healing',
+            'teachers' => 'Teachers in our Network - Would you Join?',
+            'words' => 'Healing Through Words (group and individual sessions)',
+            //'' => '',
+        ]) {
+		$key = urlize($text);
+		if (isset($match[$key])) return $match[$key];
+	}
+	return $text;
+}
+
 function section_banner($section = false) {
 	if ($section && in_array('jpg', explode(', ', $section['extensions']))) return;
 
-	$fwe = (cs_var('fwe') ? cs_var('fwe') : cs_var('path') . '/default.') . 'jpg';
+	$fwe = (cs_var('fwe') ? cs_var('fwe') : (cs_var('node') == 'index' ? cs_var('path') . '/default.' : 'path')) . 'jpg';
 	if (!file_exists($fwe)) return;
 
 	$url = cs_var('url') . str_replace('\\', '/', substr($fwe, strlen(cs_var('path')) + 1));
@@ -136,7 +157,7 @@ function print_fol_menu() {
 
 function print_sections_menu($only_fol_menu = false) {
 	$nl = cs_var('nl');
-	echo $nl . $nl . '<div class="row menu if-not-mobile">' . $nl;
+	echo $nl . $nl . '<div class="row menu">' . $nl;
 	$node = cs_var('node');
 	$empties = ['Cwsa'];
 	if (cs_var('folName')) $empties[] = humanize(cs_var('folName'));
