@@ -133,6 +133,7 @@ function site_humanize($text) {
 		'creative-abundance' => 'Creative Abundance - Article on Perspectives',
 		'creative-expression' => 'Creative Expression - 8 Week Workshop for Children',
 		'education' => 'Education - Introduction for Parent and Teacher',
+		'healing' => 'Healing Practices - finding Amritham or Ambrosia',
 		'nom' => 'Project Nom - Wisdom Preservation Initiative',
 		'pact' => 'PACT - FORUM / Resource Center for Parents and Teachers',
 		'serenity' => 'Serenity - Affirmations and Healing',
