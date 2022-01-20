@@ -127,7 +127,7 @@ function site_humanize($text) {
 		'matrix' => 'Matrix of Channels and Areas',
 		'sunlight' => 'Evolving Sunlight - a quality practice',
 		//nom
-		'brics' => 'BRICS - Sensory Enhancement program for Children',
+		'brics' => 'BRiCS - Sensory Enhancement program for Children',
 		'children' => 'Curation Based Education for Children',
 		'classroom' => 'Classroom Suggestions and Guidelines',
 		'creative-abundance' => 'Creative Abundance - Article on Perspectives',
@@ -135,6 +135,8 @@ function site_humanize($text) {
 		'education' => 'Education - Introduction for Parent and Teacher',
 		'healing' => 'Healing Practices - finding Amritham or Ambrosia',
 		'nom' => 'Project Nom - Wisdom Preservation Initiative',
+		'nom-faqs' => 'Nom FAQs - Frequently Asked Questions',
+		'nom-resources' => 'Nom Resources for Parents and Teachers',
 		'pact' => 'PACT - FORUM / Resource Center for Parents and Teachers',
 		'serenity' => 'Serenity - Affirmations and Healing',
 		'teachers' => 'Teachers in our Network - Would you Join?',
@@ -162,56 +164,68 @@ function print_fol_menu() {
 }
 
 function print_sections_menu($only_fol_menu = false) {
+	$sitemap = cs_var('node') == 'sitemap' && !cs_var('sitemap-called');
 	$nl = cs_var('nl');
-	echo $nl . $nl . '<div class="row menu">' . $nl;
+	echo $sitemap ? '<ol class="menu">' : $nl . $nl . '<div class="row menu">' . $nl;
 	$node = cs_var('node');
 	$empties = ['Cwsa'];
 	if (cs_var('folName')) $empties[] = humanize(cs_var('folName'));
 	
 	$section = cs_var('section');
 	if ($only_fol_menu) {
-		echo '	<div class="col-12">' . $nl;
-		echo '		<h2 class="selected">' . humanize($section['name']) . ' <i class="arrow right"></i> ' .  humanize(cs_var('folName')) . (cs_var('node') != cs_var('folName') ? ' <i class="arrow right"></i> ' . humanize(cs_var('node')) : '') . '</h2>' . $nl;
+		echo $sitemap ? '<ol>' : '	<div class="col-12">' . $nl;
+		echo $sitemap ? '' : '		<h2 class="selected">' . humanize($section['name']) . ' <i class="arrow right"></i> ' .  humanize(cs_var('folName')) . (cs_var('node') != cs_var('folName') ? ' <i class="arrow right"></i> ' . humanize(cs_var('node')) : '') . '</h2>' . $nl;
 
 		$last_file = '';
 		$files = scandir(cs_var('fol'));
 		natsort($files);
 		foreach ($files as $i) {
-			$fwe = print_section_file($nl, $node, $last_file, $i, $empties);
+			$fwe = print_section_file($nl, $node, $last_file, $i, $empties, $sitemap);
+			if ($sitemap && $last_file != $fwe) {
+				echo '</li>';
+			}
 			$last_file = $fwe;
 		}
-		echo '	</div>' . $nl;
-		echo '</div>' . $nl;
+		echo $sitemap ? '</ol>' : '	</div>' . $nl;
+		echo $sitemap ? '</ol>' : '</div>' . $nl;
 		return;
 	}
 
 	foreach (cs_var('sections') as $s) {
-		if ($s['slug'] == 'supraja' && (!$section || $section['slug'] != $s['slug'])) continue;
-		echo '	<div class="col-md-3 col-sm-6 col-12">' . $nl;
-		echo '		<h2>' . $s['name'] . '</h2>' . $nl;
+		if (($s['slug'] == 'supraja' || $s['slug'] == 'scripts') && (!$section || $section['slug'] != $s['slug'])) continue;
+		echo $sitemap ? '' : '	<div class="col-md-3 col-sm-6 col-12">' . $nl;
+		echo $sitemap ? '<li>' . $s['name'] . '<ol>' : '		<h2>' . $s['name'] . '</h2>' . $nl;
 		$path = cs_var('path') . '/' . $s['slug'] . '/';
 		$files = scandir($path);
 
 		$last_file = '';
 		foreach ($files as $file) {
-			$fwe = print_section_file($nl, $node, $last_file, $file, $empties);
+			if (array_search($file, ['', 'zips'])) continue;
+			$fwe = print_section_file($nl, $node, $last_file, $file, $empties, $sitemap);
+			if (array_search($fwe, ['', 'quran','sri-aurobindo','gita', 'jesudas', 'chinmaya', 'jeevan-vidya', 'jeevan-vidya-hindi'])) continue; //too long publications
+			if ($sitemap && $last_file != $fwe && isset($s['subfolder'])) {
+				cs_var('section', $s);
+				cs_var('fol', $path . $fwe);
+				print_sections_menu(true);
+				echo '</li>';
+			}
 			$last_file = $fwe;
 		}
 
-		echo '	</div>' . $nl;
+		echo $sitemap ? '</ol></li>' : '	</div>' . $nl;
 	}
 
-	echo '</div>' . $nl;
+	echo $sitemap ? '</ol>' : '</div>' . $nl;
 }
 
-function print_section_file($nl, $node, $last_file, $file, $empties) {
+function print_section_file($nl, $node, $last_file, $file, $empties, $sitemap) {
 	if ($file == '.' || $file == '..' || $file[0] == '_'
 		|| $file == 'assets' || $file == 'images'
 		|| endsWith($file, '.xml') || endsWith($file, '.zip'))
 		return $last_file;
 	$file = explode('.', $file, 2)[0];
 	if ($last_file == $file) return $file;
-	echo sprintf('		<a%s href="%s">%s</a>' . $nl,
+	echo sprintf(($sitemap ? '<li>' : '') . '		<a%s href="%s">%s</a>' . $nl,
 		($node == $file || cs_var('folName') == $file ? ' class="selected"' : ''), cs_var('url') . $file . '/', humanize($file, $empties));
 	return $file;
 }
