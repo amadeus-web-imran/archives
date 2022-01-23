@@ -5,7 +5,7 @@ function active_if($node) {
 	if (cs_var('node') == $node || $folder) echo ' active';
 }
 
-cs_var('sections', ['areas', 'drive', 'ideas', 'community']);
+cs_var('sections', ['areas', 'drive', 'ideas', 'about']);
 cs_var('long-folders', ['', 'quran','sri-aurobindo','gita', 'jesudas', 'chinmaya', 'jeevan-vidya', 'jeevan-vidya-hindi']);
 //	['name' => 'C. Conception',	'slug' => 'supraja','extensions' => 'mp3, png, jpg, txt, pdf', 'subfolder' => true],
 //	['name' => 'Resources',	'slug' => 'data', 		'extensions' => 'tsv'],
