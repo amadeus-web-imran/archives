@@ -13,7 +13,7 @@ cs_var('long-folders', ['', 'quran','sri-aurobindo','gita', 'jesudas', 'chinmaya
 function section_info($id) {
 	$r = ['name' => humanize($id), 'slug' => $id, 'extensions' => 'txt', 'subfolder' => true];
 	if ($id == 'drive') $r['extensions'] = 'mp3, png, jpg, txt, pdf';
-	if ($id == 'community') $r['extensions'] = 'txt, php';
+	if ($id == 'about') $r['extensions'] = 'txt, php';
 	return $r;
 }
 

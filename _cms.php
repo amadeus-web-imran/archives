@@ -50,6 +50,7 @@ function is_multisite_section($slug) {
 			cs_var('extn', $extn);
 			cs_var('file', $fwe . $extn);
 			cs_var('multisite_section', $slug);
+			cs_var('multisite_path', cs_var('path') . '/' . $slug);
 			cs_var('home_url', $slug . '/');
 			return true;
 		}
@@ -64,7 +65,7 @@ else
 	include_once '_functions.php';
 
 
-include_once 'content/community/network/_areas.php';
+include_once 'content/about/network/_areas.php';
 
 load_amadeus_module('markdown');
 

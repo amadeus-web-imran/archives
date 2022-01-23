@@ -8,7 +8,7 @@
 <?php
 $articles = [
 	'about/about-us/spirit',
-	'areas/ideas/articles/imran/welcome',
+	'ideas/articles/imran/welcome',
 	'about/about-us/matrix',
 	'areas/learn/education/children',
 	'areas/learn/education/education',
