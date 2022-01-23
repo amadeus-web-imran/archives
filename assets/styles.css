@@ -83,3 +83,11 @@ iframe.full-width, .full-height { height: 95vh; }
 .above-footer .menu a { display: block; padding: 3px 8px 3px 8px; }
 .above-footer .menu a.selected, .section-menu a.selected { background-color: #94559B; color: #fff; }
 .above-footer .menu h2.selected { border-bottom: 3px solid #94559B; }
+
+
+div.contact.row { background-color: #D2FDBA; text-align: center; }
+
+.icon-whatsapp, .icon-phone, .icon-email { padding-left: 30px; background-repeat: no-repeat; background-position: left center; background-size: contain; line-height: 60px; }
+.icon-whatsapp { background-image: url(icon-whatsapp.png); }
+.icon-phone { background-image: url(icon-call.png); }
+.icon-email { background-image: url(icon-email.png); }

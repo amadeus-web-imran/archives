@@ -1,5 +1,5 @@
-<h3>Sanjay Ranganathan</h3>
-<div class="row mb-20">
+<div class="row mb-20 contact">
+	<div class="col-md-12"><h2>Sanjay Ranganathan</h2></div>
 	<div class="col-md-4">
 		<a class="autosize icon-whatsapp" href="//wa.me/+919087799900">+91 90877 99900</a>
 	</div>

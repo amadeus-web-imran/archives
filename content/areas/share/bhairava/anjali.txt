@@ -1,6 +1,6 @@
 # About [Anjali Sharma](https://milaap.org/stories/anjali)
 
-<div class="banner"><img src="../core/bhairava/assets/anjali.jpg" class="img-fluid" /></div>
+<div class="banner"><img src="../content/areas/share/bhairava/assets/anjali.jpg" class="img-fluid" /></div>
 
 Lorem ipsum dolor sit amet consectetuer adipiscing faucibus Nam malesuada eu. Facilisis.
 
