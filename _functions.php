@@ -141,34 +141,7 @@ function did_render_page() {
 	return false;
 }
 
-function site_humanize1($text) {
-	if ($match = [
-		'spirit' => 'A spirit of oneness to permeate the world',
-		'welcome' => 'Wecome Note - circa 2021',
-		'matrix' => 'Matrix of Channels and Areas',
-		'sunlight' => 'Evolving Sunlight - a quality practice',
-		//nom
-		'brics' => 'BRiCS - Sensory Enhancement program for Children',
-		'children' => 'Curation Based Education for Children',
-		'classroom' => 'Classroom Suggestions and Guidelines',
-		'creative-abundance' => 'Creative Abundance - Article on Perspectives',
-		'creative-expression' => 'Creative Expression - 8 Week Workshop for Children',
-		'education' => 'Education - Introduction for Parent and Teacher',
-		'healing' => 'Healing Practices - finding Amritham or Ambrosia',
-		'nom' => 'Project Nom - Wisdom Preservation Initiative',
-		'nom-faqs' => 'Nom FAQs - Frequently Asked Questions',
-		'nom-resources' => 'Nom Resources for Parents and Teachers',
-		'pact' => 'PACT - FORUM / Resource Center for Parents and Teachers',
-		'serenity' => 'Serenity - Affirmations and Healing',
-		'teachers' => 'Teachers in our Network - Would you Join?',
-		'words' => 'Healing Through Words (group and individual sessions)',
-		//'' => '',
-				]) {
-		$key = urlize($text);
-		if (isset($match[$key])) return $match[$key];
-	}
-	return $text;
-}
+//'nom-resources' => 'Nom Resources for Parents and Teachers',
 
 function section_banner($section = false) {
 	if ($section && in_array('jpg', explode(', ', $section['extensions']))) return;
@@ -184,6 +157,22 @@ function print_fol_menu() {
 	if (cs_var('fol')) print_sections_menu(true);
 }
 
+function get_sitemap() {
+	if (!($sm = cs_var('sitemap'))) {
+		$cols = true;
+		$rows = tsv_to_array(file_get_contents('sitemap.tsv'), $cols);
+
+		$sm = new stdClass();
+		$sm->columns = $cols;
+		$sm->rows = $rows;
+
+		$sm->byTitle = array_group_by($rows, $cols['Name']);
+		cs_var('sitemap', $sm);
+	}
+
+	return $sm;
+}
+
 function add_to_export($slug, $level) {
 	$tsvFormat = '%s	%s	%s	%s';
 	$builder = $slug != 'header' ? cs_var('SitemapBuilder') : [];
@@ -193,7 +182,15 @@ function add_to_export($slug, $level) {
 	} else if ($slug == 'close-file') {
 		file_put_contents(cs_var('path') . '/sitemap-export.tsv', implode(PHP_EOL, $builder));
 	} else {
-		$builder[] = sprintf($tsvFormat, humanize($slug), $level, '', '');
+		$sitemap = get_sitemap(); //NB: cached
+
+		$title = humanize($slug);
+		$row = isset($sitemap->byTitle[$title]) ? $sitemap->byTitle[$title][0] : false;
+
+		$description = $row ? $row[$sitemap->columns['Description']] : '';
+		$keywords = $row ? $row[$sitemap->columns['Keywords']] : '';
+
+		$builder[] = sprintf($tsvFormat, humanize($slug), $level, $description, $keywords);
 	}
 
 	cs_var('SitemapBuilder', $builder);
