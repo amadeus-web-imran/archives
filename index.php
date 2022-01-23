@@ -7,19 +7,19 @@
 <div class="row tm-row">
 <?php
 $articles = [
-	'/core/about-us/spirit',
-	'/authors/imran/welcome',
-	'/core/about-us/matrix',
-	'/core/project-nom/children',
-	'/core/project-nom/education',
-	'/core/evolve/sunlight',
+	'about/about-us/spirit',
+	'areas/ideas/articles/imran/welcome',
+	'about/about-us/matrix',
+	'areas/learn/education/children',
+	'areas/learn/education/education',
+	'areas/learn/evolve/sunlight',
 ];
 foreach ($articles as $item) {
 	$bits = explode('/', $item);
 	$slug = ($name = array_pop($bits)) . '/';
 	$fol = array_pop($bits);
 	$item .= '.txt';
-	$text = excerpt($item, $slug, '&hellip; Read More');
+	$text = excerpt('/content/' . $item, $slug, '&hellip; Read More');
 	?>
 	<article class="col-12 col-md-6 tm-post">
 		<hr class="tm-hr-primary">

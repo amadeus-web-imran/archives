@@ -6,20 +6,9 @@ function active_if($node) {
 }
 
 cs_var('sections', ['areas', 'drive', 'about', 'community']);
-/*
-	['name' => 'Main',		'slug' => 'core', 		'extensions' => 'mp3, png, jpg, txt, pdf', 'subfolder' => true],
-	['name' =>'Incubating','slug' => 'initiatives',	'extensions' => 'txt'],
-	['name' => 'Articles',	'slug' => 'authors', 	'extensions' => 'txt', 'subfolder' => true],
-	['name' => 'We Support',	'slug' => 'people', 'extensions' => 'txt', 'subfolder' => true],
-	['name' => 'C. Conception',	'slug' => 'supraja','extensions' => 'mp3, png, jpg, txt, pdf', 'subfolder' => true],
-	['name' => 'Inspire',	'slug' => 'downloads',	'extensions' => 'mp3, png, jpg, txt, pdf', 'subfolder' => true],
-	['name' => 'Devotional','slug' => 'devotional',	'extensions' => 'mp3, png, jpg, txt, pdf', 'subfolder' => true],
-	['name' => 'Published',	'slug' => 'published',	'extensions' => 'mp3, png, jpg, txt, pdf', 'subfolder' => true],
-	['name' => 'Topics',	'slug' => 'pages', 		'extensions' => 'txt'],
-	['name' => 'AM Community',	'slug' => 'scripts', 	'extensions' => 'php'],
-	//['name' => 'Resources',	'slug' => 'data', 		'extensions' => 'tsv'],
-]);
-*/
+cs_var('long-folders', ['', 'quran','sri-aurobindo','gita', 'jesudas', 'chinmaya', 'jeevan-vidya', 'jeevan-vidya-hindi']);
+//	['name' => 'C. Conception',	'slug' => 'supraja','extensions' => 'mp3, png, jpg, txt, pdf', 'subfolder' => true],
+//	['name' => 'Resources',	'slug' => 'data', 		'extensions' => 'tsv'],
 
 function section_info($id) {
 	$r = ['name' => humanize($id), 'slug' => $id, 'extensions' => 'txt', 'subfolder' => true];
@@ -209,7 +198,7 @@ function print_sections_menu($only_fol_menu = false) {
 		echo $sitemap ? '' : '		<h2 class="selected">' . humanize($section['name']) . ' <i class="arrow right"></i> ' .  humanize(cs_var('folName')) . (cs_var('node') != cs_var('folName') ? ' <i class="arrow right"></i> ' . humanize(cs_var('node')) : '') . '</h2>' . $nl;
 
 		$last_file = '';
-		if (cs_var('parentFol')) {
+		if (!$sitemap && cs_var('parentFol')) {
 			$files = scandir(cs_var('parentFol'));
 			natsort($files);
 			foreach ($files as $i) {
@@ -229,7 +218,16 @@ function print_sections_menu($only_fol_menu = false) {
 			$fwe = print_section_file($nl, $node, $last_file, $i, $empties, $sitemap);
 			if ($sitemap && $last_file != $fwe) {
 				echo '</li>';
+
+				$long = array_search($fwe, cs_var('long-folders')); //too long publications
+				if (!$long && strpos($i, '.') === false)
+				{
+					cs_var('fol', ($orig = cs_var('fol')) . '/' . $i);
+					print_sections_menu(true);
+					cs_var('fol', $orig);
+				}
 			}
+
 			$last_file = $fwe;
 		}
 
@@ -250,10 +248,10 @@ function print_sections_menu($only_fol_menu = false) {
 		foreach ($files as $file) {
 			if (array_search($file, ['', 'zips'])) continue;
 			$fwe = print_section_file($nl, $node, $last_file, $file, $empties, $sitemap);
-			if (array_search($fwe, ['', 'quran','sri-aurobindo','gita', 'jesudas', 'chinmaya', 'jeevan-vidya', 'jeevan-vidya-hindi'])) continue; //too long publications
+			if (array_search($fwe, cs_var('long-folders'))) continue; //too long publications
 			if ($sitemap && $last_file != $fwe && isset($s['subfolder'])) {
 				cs_var('section', $s);
-				cs_var('fol', $path . $fwe);
+				cs_var('fol', $path . $file);
 				print_sections_menu(true);
 				echo '</li>';
 			}
