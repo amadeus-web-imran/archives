@@ -5,7 +5,7 @@ function active_if($node) {
 	if (cs_var('node') == $node || $folder) echo ' active';
 }
 
-cs_var('sections', ['areas', 'drive', /*'about',*/ 'community']);
+cs_var('sections', ['areas', 'drive', 'ideas', 'community']);
 cs_var('long-folders', ['', 'quran','sri-aurobindo','gita', 'jesudas', 'chinmaya', 'jeevan-vidya', 'jeevan-vidya-hindi']);
 //	['name' => 'C. Conception',	'slug' => 'supraja','extensions' => 'mp3, png, jpg, txt, pdf', 'subfolder' => true],
 //	['name' => 'Resources',	'slug' => 'data', 		'extensions' => 'tsv'],
@@ -227,15 +227,14 @@ function print_sections_menu($only_fol_menu = false) {
 	$sitemap = cs_var('node') == 'sitemap' && !cs_var('sitemap-called');
 	$isExporting = $sitemap && cs_var('local') && isset($_GET['export']);
 	$nl = cs_var('nl');
-	echo $sitemap ? '<ol class="menu">' : $nl . $nl . '<div class="row menu">' . $nl;
 	$node = cs_var('node');
 	$empties = ['Cwsa'];
 	if (cs_var('folName')) $empties[] = humanize(cs_var('folName'));
 
 	$section = cs_var('section');
 	if ($only_fol_menu) {
-		echo $sitemap ? '<ol>' : '	<div class="col-12">' . $nl;
 		echo $sitemap ? '' : '		<h2 class="selected">Section Menu</h2>' . $nl;
+		echo $sitemap ? '<ol>' : '<div class="section-menu">';
 
 		$last_file = '';
 		if (!$sitemap && cs_var('parentFol')) {
@@ -274,10 +273,11 @@ function print_sections_menu($only_fol_menu = false) {
 			$last_file = $fwe;
 		}
 
-		echo $sitemap ? '</ol>' : '	</div>' . $nl;
 		echo $sitemap ? '</ol>' : '</div>' . $nl;
 		return;
 	}
+
+	echo $sitemap ? '<ol class="menu">' : $nl . $nl . '<div class="row menu">' . $nl;
 
 	if ($isExporting) add_to_export('header', 0);
 	foreach (cs_var('sections') as $id) {

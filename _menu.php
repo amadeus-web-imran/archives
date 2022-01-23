@@ -1,12 +1,18 @@
 <?php if (cs_var('multisite_section')) { include_once cs_var('multisite_section') . '/_menu.php'; return; } ?>
 
+                    <!--
                     <li class="tm-nav-item<?php active_if('index') ?>"><a href="<?php echo cs_var('url');?>" class="tm-nav-link">
                         <i class="fas fa-home"></i>
                         Home
                     </a></li>
+                    -->
                     <li class="tm-nav-item"><a href="javascript: $('.above-footer')[0].scrollIntoView(); $('.navbar-toggler').trigger('click');" class="tm-nav-link">
                         <i class="fas fa fa-clipboard-list"></i>
                         Go To Menu
+                    </a></li>
+                    <li class="tm-nav-item"><a href="<?php echo cs_var('url');?>sitemap/" class="tm-nav-link">
+                        <i class="fas fa fa-sitemap"></i>
+                        Sitemap
                     </a></li>
                     <div class="holds-menu-contents"></div>
                     <li style="list-style-type: none; padding-bottom: 20px;">
