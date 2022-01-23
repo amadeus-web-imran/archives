@@ -170,13 +170,15 @@ function did_render_page() {
 
 //'nom-resources' => 'Nom Resources for Parents and Teachers',
 
-function section_banner($section = false) {
+function section_banner($section = false, $fwe = false, $return = false) {
 	if ($section && in_array('jpg', explode(', ', $section['extensions']))) return;
 
-	$fwe = (cs_var('fwe') ? cs_var('fwe') : (cs_var('node') == 'index' ? cs_var('path') . '/default.' : 'path')) . 'jpg';
+	$fwe = $fwe ? cs_var('path') . $fwe
+		: (cs_var('fwe') ? cs_var('fwe') : (cs_var('node') == 'index' ? cs_var('path') . '/default.' : 'path')) . 'jpg';
 	if (!file_exists($fwe)) return;
 
 	$url = cs_var('url') . str_replace('\\', '/', substr($fwe, strlen(cs_var('path')) + 1));
+	if ($return) return $url;
 	echo sprintf('<div class="banner"><img src="%s" alt="" class="img-fluid" /></div>', $url, humanize(cs_var('node')));
 }
 
