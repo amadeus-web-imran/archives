@@ -1,8 +1,20 @@
 <h1>Sri Aurobindo</h1>
 
-<h2>A brief biography</h2>
+Do read his <a href="../uttarpara/">Uttarpara Speech</a>, <a href="../india/">Independance Day Speech</a> or this <a href="../maya/">excerpt on Maya</a>, <a href="https://legacy.yieldmore.org/people/sri-aurobindo/" target="_blank">first published by YM here</a>.
+
+<h1>A brief Biography</h1>
 
 [to be expanded]
+
+<h1>Sri Aurobindo at YieldMore.org (a 10 year journey)</h1>
+
+I will write more of my journey with Sri Aurobindo and the Mother - until then I let this picture speak:
+
+<div class="banner"><img src="../assets/sections/imran-mm.jpg" class="img-fluid" /></div>
+
+We, YieldMore.org had earlier published 4 of <a href="https://legacy.yieldmore.org/people/sri-aurobindo/bio/" target="_blank">Sri Aurobindo's works</a> viz: <a href="https://legacy.yieldmore.org/works/essays-on-the-gita/" target="_blank">Essays on the Gita</a>, <a href="https://legacy.yieldmore.org/works/hour-of-god/" target="_blank">Hour of God</a>, <a href="https://legacy.yieldmore.org/works/problem-of-rebirth/" target="_blank">The Problem of Rebirth</a> and <a href="https://legacy.yieldmore.org/works/savitri/" target="_blank">Savitri</a>. Some of his quotes on Hinduism, you will find on <a href="https://legacy.yieldmore.org/topics/religion/" target="_blank">our legacy religion page</a>.<br><br>
+
+<a href="https://imran.yieldmore.org/" target="_blank">Imran</a> is a volunteer at <a href="https://sriaurobindodhama.org/" target="_blank">Sri Aurobindo Dhama</a> and has been published at <a href="https://journal.aurobharati.in/author/imran-ali-namazi/" target="_blank">Renaissance (an AuroBharati publication)</a>. Imran has <a href="https://imran.yieldmore.org/impelled/for/msa/" target="_blank">dedicated a few poems to Mother/Sri Aurobindo</a> and used to distribute copies of <a href="../sri-aurobindos-gita/">Sri Aurobindo's Gita</a>.
 
 <h1>Complete Works of Sri Aurobindo</h1>
 
@@ -10,6 +22,7 @@
 
 * his works became open domain in 2010 and thus are published here at YM.
 
+<ul>
 <?php
 $files = [
 	'cwsa-01-early-cultural-writings',
@@ -47,19 +60,10 @@ $files = [
 foreach ($files as $file) {
 	$path = __DIR__ . '/' . $file . '.txt';
 	if (!file_exists($path)) continue; //TODO: remove this line after adding some basic content for empty files
-	echo '<h2><a href="../' . $file . '/">' . substr(humanize($file), 5) . '</a></h2>';
+	echo '<li><a href="../' . $file . '/">' . substr(humanize($file), 5) . '</a><br />';
 	$raw = file_get_contents($path);
 	echo $raw && $raw[0] == '#' ? markdown($raw) : wpautop($raw);
-	echo '<hr />';
+	echo '</li>';
 }
 ?>
-
-<h1>Sri Aurobindo at YieldMore.org (a 10 year journey)</h1>
-
-I will write more of my journey with Sri Aurobindo and the Mother - until then I let this picture speak:
-
-<div class="banner"><img src="../assets/sections/imran-mm.jpg" class="img-fluid" /></div>
-
-We, YieldMore.org had earlier published 4 of <a href="https://legacy.yieldmore.org/people/sri-aurobindo/bio/" target="_blank">Sri Aurobindo's works</a> viz: <a href="https://legacy.yieldmore.org/works/essays-on-the-gita/" target="_blank">Essays on the Gita</a>, <a href="https://legacy.yieldmore.org/works/hour-of-god/" target="_blank">Hour of God</a>, <a href="https://legacy.yieldmore.org/works/problem-of-rebirth/" target="_blank">The Problem of Rebirth</a> and <a href="https://legacy.yieldmore.org/works/savitri/" target="_blank">Savitri</a>. Some of his quotes on Hinduism, you will find on <a href="https://legacy.yieldmore.org/topics/religion/" target="_blank">our legacy religion page</a>.
-
-<a href="https://imran.yieldmore.org/" target="_blank">Imran</a> is a volunteer at <a href="https://sriaurobindodhama.org/" target="_blank">Sri Aurobindo Dhama</a> and has been published at <a href="https://journal.aurobharati.in/author/imran-ali-namazi/" target="_blank">Renaissance (an AuroBharati publication)</a>. Imran has <a href="https://imran.yieldmore.org/impelled/for/msa/" target="_blank">dedicated a few poems to Mother/Sri Aurobindo</a> and used to distribute copies of <a href="../sri-aurobindos-gita/">Sri Aurobindo's Gita</a>.
+</ul>

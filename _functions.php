@@ -41,7 +41,7 @@ function before_render() {
 				if (is_dir($d . cs_var('node'))) {
 					cs_var('parentFol', $d);
 					cs_var('parentFolName', $i);
-					cs_var('fol', $d . cs_var('node'));
+					cs_var('fol', $d . cs_var('node') . '/');
 					cs_var('folName', cs_var('node'));
 					$section = $s;
 					break;
@@ -141,7 +141,7 @@ function did_render_page() {
 	return false;
 }
 
-function site_humanize($text) {
+function site_humanize1($text) {
 	if ($match = [
 		'spirit' => 'A spirit of oneness to permeate the world',
 		'welcome' => 'Wecome Note - circa 2021',
@@ -184,8 +184,24 @@ function print_fol_menu() {
 	if (cs_var('fol')) print_sections_menu(true);
 }
 
+function add_to_export($slug, $level) {
+	$tsvFormat = '%s	%s	%s	%s';
+	$builder = $slug != 'header' ? cs_var('SitemapBuilder') : [];
+
+	if ($slug == 'header') {
+		$builder[] = sprintf($tsvFormat, '#Name', 'Level', 'Description', 'Keywords');
+	} else if ($slug == 'close-file') {
+		file_put_contents(cs_var('path') . '/sitemap-export.tsv', implode(PHP_EOL, $builder));
+	} else {
+		$builder[] = sprintf($tsvFormat, humanize($slug), $level, '', '');
+	}
+
+	cs_var('SitemapBuilder', $builder);
+}
+
 function print_sections_menu($only_fol_menu = false) {
 	$sitemap = cs_var('node') == 'sitemap' && !cs_var('sitemap-called');
+	$isExporting = $sitemap && cs_var('local') && isset($_GET['export']);
 	$nl = cs_var('nl');
 	echo $sitemap ? '<ol class="menu">' : $nl . $nl . '<div class="row menu">' . $nl;
 	$node = cs_var('node');
@@ -218,12 +234,15 @@ function print_sections_menu($only_fol_menu = false) {
 			$fwe = print_section_file($nl, $node, $last_file, $i, $empties, $sitemap);
 			if ($sitemap && $last_file != $fwe) {
 				echo '</li>';
+				if ($isExporting) add_to_export($fwe, cs_var('recursive_print_sections_menu') ? 4 : 3);
 
 				$long = array_search($fwe, cs_var('long-folders')); //too long publications
 				if (!$long && strpos($i, '.') === false)
 				{
 					cs_var('fol', ($orig = cs_var('fol')) . '/' . $i);
+					cs_var('recursive_print_sections_menu', true);
 					print_sections_menu(true);
+					cs_var('recursive_print_sections_menu', false);
 					cs_var('fol', $orig);
 				}
 			}
@@ -236,6 +255,7 @@ function print_sections_menu($only_fol_menu = false) {
 		return;
 	}
 
+	if ($isExporting) add_to_export('header', 0);
 	foreach (cs_var('sections') as $id) {
 		$s = section_info($id);
 		if (($s['slug'] == 'supraja' || $s['slug'] == 'scripts') && (!$section || $section['slug'] != $s['slug'])) continue;
@@ -243,6 +263,8 @@ function print_sections_menu($only_fol_menu = false) {
 		echo $sitemap ? '<li>' . $s['name'] . '<ol>' : '		<h2>' . $s['name'] . '</h2>' . $nl;
 		$path = cs_var('path') . '/content/' . $s['slug'] . '/';
 		$files = scandir($path);
+
+		if ($isExporting) add_to_export($s['name'], 1);
 
 		$last_file = '';
 		foreach ($files as $file) {
@@ -252,6 +274,7 @@ function print_sections_menu($only_fol_menu = false) {
 			if ($sitemap && $last_file != $fwe && isset($s['subfolder'])) {
 				cs_var('section', $s);
 				cs_var('fol', $path . $file);
+				if ($isExporting) add_to_export($file, 2);
 				print_sections_menu(true);
 				echo '</li>';
 			}
@@ -262,6 +285,7 @@ function print_sections_menu($only_fol_menu = false) {
 	}
 
 	echo $sitemap ? '</ol>' : '</div>' . $nl;
+	if ($isExporting) add_to_export('close-file', 0);
 }
 
 function print_section_file($nl, $node, $last_file, $file, $empties, $sitemap) {
