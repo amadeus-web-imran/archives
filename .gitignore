@@ -1,7 +1,7 @@
 .files
-devotional/gita
-devotional/quran
-published
+content/drive/devotional/gita
+content/drive/devotional/quran
+content/drive/published
 *.jpg
 *.png
 *.pdf

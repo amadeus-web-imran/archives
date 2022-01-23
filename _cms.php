@@ -63,7 +63,7 @@ else
 	include_once '_functions.php';
 
 
-include_once 'scripts/_areas.php';
+include_once 'content/community/network/_areas.php';
 
 load_amadeus_module('markdown');
 

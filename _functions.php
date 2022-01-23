@@ -5,19 +5,28 @@ function active_if($node) {
 	if (cs_var('node') == $node || $folder) echo ' active';
 }
 
-cs_var('sections', [
+cs_var('sections', ['areas', 'drive', 'about', 'community']);
+/*
 	['name' => 'Main',		'slug' => 'core', 		'extensions' => 'mp3, png, jpg, txt, pdf', 'subfolder' => true],
-	['name' =>'Incubating','slug' => 'initiatives','extensions' => 'txt'],
+	['name' =>'Incubating','slug' => 'initiatives',	'extensions' => 'txt'],
 	['name' => 'Articles',	'slug' => 'authors', 	'extensions' => 'txt', 'subfolder' => true],
-	['name' => 'We Support',	'slug' => 'people', 	'extensions' => 'txt', 'subfolder' => true],
+	['name' => 'We Support',	'slug' => 'people', 'extensions' => 'txt', 'subfolder' => true],
 	['name' => 'C. Conception',	'slug' => 'supraja','extensions' => 'mp3, png, jpg, txt, pdf', 'subfolder' => true],
 	['name' => 'Inspire',	'slug' => 'downloads',	'extensions' => 'mp3, png, jpg, txt, pdf', 'subfolder' => true],
-	['name' => 'Devotional',	'slug' => 'devotional',	'extensions' => 'mp3, png, jpg, txt, pdf', 'subfolder' => true],
+	['name' => 'Devotional','slug' => 'devotional',	'extensions' => 'mp3, png, jpg, txt, pdf', 'subfolder' => true],
 	['name' => 'Published',	'slug' => 'published',	'extensions' => 'mp3, png, jpg, txt, pdf', 'subfolder' => true],
 	['name' => 'Topics',	'slug' => 'pages', 		'extensions' => 'txt'],
-	//['name' => 'Resources',	'slug' => 'data', 		'extensions' => 'tsv'],
 	['name' => 'AM Community',	'slug' => 'scripts', 	'extensions' => 'php'],
+	//['name' => 'Resources',	'slug' => 'data', 		'extensions' => 'tsv'],
 ]);
+*/
+
+function section_info($id) {
+	$r = ['name' => humanize($id), 'slug' => $id, 'extensions' => 'txt', 'subfolder' => true];
+	if ($id == 'drive') $r['extensions'] = 'mp3, png, jpg, txt, pdf';
+	if ($id == 'community') $r['extensions'] = 'txt, php';
+	return $r;
+}
 
 function before_render() {
 	if (cs_var('node') == 'go') { include_once 'resources.php'; exit; }
@@ -25,8 +34,9 @@ function before_render() {
 	$file = false;
 	$fol = false;
 
-	foreach (cs_var('sections') as $s) {
-		$path = cs_var('path') . '/' . $s['slug'] . '/';
+	foreach (cs_var('sections') as $id) {
+		$s = section_info($id);
+		$path = cs_var('path') . '/content/' . $s['slug'] . '/';
 		if (isset($s['subfolder'])) {
 			$fol = $path . cs_var('node') . '/';
 			if (is_dir($fol)) {
@@ -34,13 +44,35 @@ function before_render() {
 				cs_var('folName', cs_var('node'));
 				$section = $s;
 				break;
-			} else if (is_dir($path)) {
-				foreach (scandir($path) as $i) {
-					if ($i == '.' || $i == '..' || $i[0] == '_') continue;
-					$d = $path . $i . '/';
-					if (is_section_file($s, $d . cs_var('node') . '.')) {
-						cs_var('fol', $d);
-						cs_var('folName', $i);
+			}
+
+			foreach (scandir($path) as $i) {
+				if ($i == '.' || $i == '..' || $i[0] == '_') continue;
+				$d = $path . $i . '/';
+				if (is_dir($d . cs_var('node'))) {
+					cs_var('parentFol', $d);
+					cs_var('parentFolName', $i);
+					cs_var('fol', $d . cs_var('node'));
+					cs_var('folName', cs_var('node'));
+					$section = $s;
+					break;
+				} else if (is_section_file($s, $d . cs_var('node') . '.')) {
+					cs_var('parentFol', $path);
+					cs_var('parentFolName', dirname($path));
+					cs_var('fol', $d);
+					cs_var('folName', $i);
+					$section = $s;
+					break;
+				}
+
+				foreach (scandir($d) as $j) {
+					if ($j == '.' || $j == '..' || $j[0] == '_') continue;
+					$e = $d . $j . '/';
+					if (is_section_file($s, $e . cs_var('node') . '.')) {
+						cs_var('parentFol', $d);
+						cs_var('parentFolName', $i);
+						cs_var('fol', $e);
+						cs_var('folName', $j);
 						$section = $s;
 						break;
 					}
@@ -170,11 +202,25 @@ function print_sections_menu($only_fol_menu = false) {
 	$node = cs_var('node');
 	$empties = ['Cwsa'];
 	if (cs_var('folName')) $empties[] = humanize(cs_var('folName'));
-	
+
 	$section = cs_var('section');
 	if ($only_fol_menu) {
 		echo $sitemap ? '<ol>' : '	<div class="col-12">' . $nl;
 		echo $sitemap ? '' : '		<h2 class="selected">' . humanize($section['name']) . ' <i class="arrow right"></i> ' .  humanize(cs_var('folName')) . (cs_var('node') != cs_var('folName') ? ' <i class="arrow right"></i> ' . humanize(cs_var('node')) : '') . '</h2>' . $nl;
+
+		$last_file = '';
+		if (cs_var('parentFol')) {
+			$files = scandir(cs_var('parentFol'));
+			natsort($files);
+			foreach ($files as $i) {
+				$fwe = print_section_file($nl, $node, $last_file, $i, $empties, $sitemap);
+				if ($sitemap && $last_file != $fwe) {
+					echo '</li>';
+				}
+				$last_file = $fwe;
+			}
+			echo '<hr class="menu-separator" />';
+		}
 
 		$last_file = '';
 		$files = scandir(cs_var('fol'));
@@ -186,16 +232,18 @@ function print_sections_menu($only_fol_menu = false) {
 			}
 			$last_file = $fwe;
 		}
+
 		echo $sitemap ? '</ol>' : '	</div>' . $nl;
 		echo $sitemap ? '</ol>' : '</div>' . $nl;
 		return;
 	}
 
-	foreach (cs_var('sections') as $s) {
+	foreach (cs_var('sections') as $id) {
+		$s = section_info($id);
 		if (($s['slug'] == 'supraja' || $s['slug'] == 'scripts') && (!$section || $section['slug'] != $s['slug'])) continue;
 		echo $sitemap ? '' : '	<div class="col-md-3 col-sm-6 col-12">' . $nl;
 		echo $sitemap ? '<li>' . $s['name'] . '<ol>' : '		<h2>' . $s['name'] . '</h2>' . $nl;
-		$path = cs_var('path') . '/' . $s['slug'] . '/';
+		$path = cs_var('path') . '/content/' . $s['slug'] . '/';
 		$files = scandir($path);
 
 		$last_file = '';
@@ -226,7 +274,7 @@ function print_section_file($nl, $node, $last_file, $file, $empties, $sitemap) {
 	$file = explode('.', $file, 2)[0];
 	if ($last_file == $file) return $file;
 	echo sprintf(($sitemap ? '<li>' : '') . '		<a%s href="%s">%s</a>' . $nl,
-		($node == $file || cs_var('folName') == $file ? ' class="selected"' : ''), cs_var('url') . $file . '/', humanize($file, $empties));
+		($node == $file || cs_var('folName') == $file || cs_var('parentFolName') == $file ? ' class="selected"' : ''), cs_var('url') . $file . '/', humanize($file, $empties));
 	return $file;
 }
 ?>
