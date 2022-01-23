@@ -5,6 +5,9 @@
 .byline { font-weight: bold; font-style: italic; color: yellow; letter-spacing: 3px; text-align: center; }
 .footer-message { font-size: 70%; line-height: 1.3; text-align: justify; }
 
+.tm-main { padding: 20px 20px 40px 20px; }
+@media (max-width: 767px) { .tm-main { padding-top: 60px; } }
+
 .amadeus-credits img { vertical-align: middle!important; } /* TODO: how to change in theme */
 
 .holds-menu-contents ul.contents { background-color: #ff8; color: #A36DA9; }
@@ -16,7 +19,7 @@ ul.contents .indent-h2 { padding-left: 40px; }
 ul.contents .indent-h3 { padding-left: 60px; }
 
 
-.box-colour-2018, .box-colour-one, .box-colour-two, .box-colour-three, .box-colour-four { padding: 20px; }
+.box-colour-2018, .box-colour-one, .box-colour-two, .box-colour-three, .box-colour-four { padding: 5px; }
 
 .box-colour-2018 { background-color: #FFDC73; }
 .box-colour-one { background-color: #CCFF66; }
@@ -37,7 +40,7 @@ ul.contents .indent-h3 { padding-left: 60px; }
 .tm-main h2, .tm-main h3 { margin-top: 20px; }
 
 a.hilight { background-color: #FAF05A; padding: 4px 8px 4px 8px; border-radius: 8px; font-weight: bold; color: #D71459; }
-div.banner { text-align: center; background-color: #E3A09B; }
+div.banner { text-align: center; background-color: #ffa; }
 div.banner:not(.below) { padding: 15px; }
 div.banner.below p { color: #94559B; font-weight: bold; font-size: small; letter-spacing: 2px; }
 .above-footer div.banner { margin-top: 30px; background-color: #A09BE3; }
@@ -63,6 +66,8 @@ div.banner.below p { color: #94559B; font-weight: bold; font-size: small; letter
 
 /* content */
 h1.heading { border-bottom: 3px solid #666; background-color: #94559B; padding: 6px; margin-bottom: 15px; font-size: 120%; }
+.breadcrumbs a { color: #ff0; }
+.breadcrumbs .home { background:  url(../icon-yieldmore.png) left center no-repeat;  background-size: contain; padding-left: 35px; }
 
 blockquote ul { font-size: 85%!important; margin-left: 20px; }
 

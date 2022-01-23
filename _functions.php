@@ -25,6 +25,18 @@ function before_render() {
 
 	foreach (cs_var('sections') as $id) {
 		$s = section_info($id);
+
+		if (cs_var('node') == $s['slug']) {
+			cs_var('fol', cs_var('path') . '/content/'. $s['slug'] . '/');
+			cs_var('folName', $s['slug']);
+
+			$s['extensions'] = 'php';
+			if (is_section_file($s, cs_var('path') . '/content/' . $s['slug'] . '.')) {
+				$section = $s;
+				break;
+			}
+		}
+
 		$path = cs_var('path') . '/content/' . $s['slug'] . '/';
 		if (isset($s['subfolder'])) {
 			$fol = $path . cs_var('node') . '/';
@@ -47,7 +59,7 @@ function before_render() {
 					break;
 				} else if (is_section_file($s, $d . cs_var('node') . '.')) {
 					cs_var('parentFol', $path);
-					cs_var('parentFolName', dirname($path));
+					cs_var('parentFolName', basename($path));
 					cs_var('fol', $d);
 					cs_var('folName', $i);
 					$section = $s;
@@ -89,10 +101,26 @@ function is_section_file($s, $file) {
 	}
 }
 
+function breadcrumb_r($var) {
+	$linkFormat = '<a href="'.cs_var('url').'%s">%s</a>';
+	if ($var == 'home')
+		return sprintf($linkFormat, '" class="home', cs_var('shortName'));
+
+	if (($slug = cs_var($var)))
+		return ' <i class="arrow right"></i> ' . sprintf($linkFormat, $slug . '/', humanize($slug));
+}
+
 function did_render_page() {
 	if ($section = cs_var('section')) {
 		$extn = cs_var('extn');
 		$file = cs_var('file');
+
+		$isLeaf = array_search(cs_var('node'), ['index', cs_var('parentFolName'), cs_var('folName')]) === false;
+		echo '<h1 class="heading breadcrumbs">' . breadcrumb_r('home') .
+			breadcrumb_r('parentFolName') .
+			breadcrumb_r('folName') .
+			($isLeaf ? breadcrumb_r('node') : '') .
+			'</h1>';
 
 		$about = cs_var('fol') . '_about.txt';
 		if (file_exists($about)) {
@@ -103,11 +131,10 @@ function did_render_page() {
 
 		section_banner($section);
 		echo '<div id="content">';
-		$done = false;
+
 		if ($fwe = cs_var('fwe')) {
 			foreach (explode(', ', $section['extensions']) as $e) {
 				if (file_exists($fwe . $e)) {
-					if ($done) echo '<hr />'; else echo '<h1 class="heading">' . humanize(cs_var('node')) . (cs_var('folName') ? ' - [' . humanize(cs_var('folName')) . ']' : '') . '</h1>';
 					$url = cs_var('url') . str_replace('\\', '/', substr($fwe, strlen(cs_var('path')) + 1)) . $e;
 					if ($e == 'pdf') {
 						echo sprintf('<a href="%s" target="_blank">download :: %s.pdf</a><br /><iframe class="full-width" src="%s"></iframe>', $url, cs_var('node'), $url);
@@ -122,7 +149,6 @@ function did_render_page() {
 					} else if ($e == 'txt' && ($extn == 'txt' || file_exists($file = $fwe . $e))) {
 						render_txt_or_md($file);
 					}
-					$done = true;
 				}
 			}
 		} else {
@@ -208,7 +234,7 @@ function print_sections_menu($only_fol_menu = false) {
 	$section = cs_var('section');
 	if ($only_fol_menu) {
 		echo $sitemap ? '<ol>' : '	<div class="col-12">' . $nl;
-		echo $sitemap ? '' : '		<h2 class="selected">' . humanize($section['name']) . ' <i class="arrow right"></i> ' .  humanize(cs_var('folName')) . (cs_var('node') != cs_var('folName') ? ' <i class="arrow right"></i> ' . humanize(cs_var('node')) : '') . '</h2>' . $nl;
+		echo $sitemap ? '' : '		<h2 class="selected">Section Menu</h2>' . $nl;
 
 		$last_file = '';
 		if (!$sitemap && cs_var('parentFol')) {
