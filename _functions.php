@@ -5,7 +5,7 @@ function active_if($node) {
 	if (cs_var('node') == $node || $folder) echo ' active';
 }
 
-cs_var('sections', ['areas', 'drive', 'about', 'community']);
+cs_var('sections', ['areas', 'drive', /*'about',*/ 'community']);
 cs_var('long-folders', ['', 'quran','sri-aurobindo','gita', 'jesudas', 'chinmaya', 'jeevan-vidya', 'jeevan-vidya-hindi']);
 //	['name' => 'C. Conception',	'slug' => 'supraja','extensions' => 'mp3, png, jpg, txt, pdf', 'subfolder' => true],
 //	['name' => 'Resources',	'slug' => 'data', 		'extensions' => 'tsv'],
@@ -41,6 +41,7 @@ function before_render() {
 		if (isset($s['subfolder'])) {
 			$fol = $path . cs_var('node') . '/';
 			if (is_dir($fol)) {
+				cs_var('parentFolName', $s['slug']);
 				cs_var('fol', $fol);
 				cs_var('folName', cs_var('node'));
 				$section = $s;
