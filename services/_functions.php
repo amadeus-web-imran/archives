@@ -20,7 +20,7 @@ cs_vars([
 		['type' => 'youtube', 'url' => 'https://www.youtube.com/channel/UC_iHhVADe1oSjP3oAi5bnnw'],
 		*/
 
-		['type' => 'linkedin', 'url' => 'https://www.linkedin.com/company/yieldmore/?viewAsMember=true'],
+		['type' => 'linkedin', 'url' => 'https://www.linkedin.com/company/yieldmore-services/?viewAsMember=true'],
 		['type' => 'github', 'url' => 'https://bitbucket.org/yieldmore/www/src/master/'],
 	],
 	
@@ -47,4 +47,30 @@ function did_render_page() {
 
 	return true;
 }
+
+function get_page_sections($page) {
+	if (!($sm = cs_var('sitemap'))) {
+		$cols = true;
+		$rows = tsv_to_array(file_get_contents(cs_var('multisite_path') . '/page-sections.tsv'), $cols);
+
+		$sm = new stdClass();
+		$sm->columns = $cols;
+		$sm->rows = $rows;
+
+		$sm->byPage = array_group_by($rows, $cols['Page']);
+		$sm->byArea = array_group_by($sm->byPage[$page], $cols['Area']);
+		cs_var('sitemap', $sm);
+	}
+
+	return $sm;
+}
+
+function area_r($col, $sm) {
+	echo $sm->byArea[$col][0][$sm->columns['Text']];
+}
+
+function item_r($col, $item, $sm) {
+	echo $item[$sm->columns[$col]];
+}
+
 ?>

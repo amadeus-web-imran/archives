@@ -1,4 +1,7 @@
-<?php $theme = cs_var('theme_url'); $amadeusUrl = './amadeus-cms/'; ?>
+<?php
+$theme = cs_var('theme_url'); $amadeusUrl = './amadeus-cms/';
+$page = get_page_sections('Services');
+?>
 		<!-- Content
 		============================================= -->
 		<section id="content" class="yms">
@@ -7,64 +10,31 @@
 				<div id="section-about" class="container-fluid page-section clearfix">
 
 					<div class="hero-headline bottommargin">
-						<h1>We are YieldMore Services,<br>Web Consulting Agency,<br>Based in Chennai, India.</h1>
-						<span>Newly established, we provide web development services to <a href="#./why-conscious/">Conscious Businesses</a>, offering them to be a part of our <a href="./network/">"Yield More Love" Network</a>. We work primarily in our own platform "<a href="<?php echo $amadeusUrl; ?>">Amadeus CMS</a>" a powerful tool for programming any html template found online. We can extend our core team / train your staff / volunteers as required.</span>
+						<h1><?php area_r('Heading', $page); ?></h1>
+						<span><?php area_r('Intro', $page); ?></span>
 					</div>
 
-					<a href="#" data-scrollto="#section-contact" data-easing="easeInOutExpo" data-speed="1250" data-offset="60" class="button button-dark button-black m-0">Drop us a Line</a>
+					<a href="#" data-scrollto="<?php area_r('ContactCTA', $page); ?>" data-easing="easeInOutExpo" data-speed="1250" data-offset="60" class="button button-dark button-black m-0">Drop us a Line</a>
 
 					<div class="line topmargin-lg bottommargin-lg"></div>
 
 					<div id="section-services" class="page-section">
 
-						<h2 class="mb-5">Features of <a href="<?php echo $amadeusUrl; ?>">Amadeus</a></h2>
+						<h2 class="mb-5"><?php area_r('SvcsHeading', $page); ?></h2>
 
-						<div class="row col-mb-50 mb-0">
+						<div class="row col-mb-50 mb-0"><?php foreach ($page->byArea['Features'] as $item) {?>
 
 							<div class="col-lg-6">
 								<div class="feature-box fbox-plain fbox-dark">
 									<div class="fbox-icon">
-										<a href="<?php echo $amadeusUrl; ?>#file-based"><i class="icon-et-desktop"></i></a>
+										<a href="<?php item_r('Url', $item, $page); ?>"><i class="icon-et-<?php item_r('Icon', $item, $page); ?>"></i></a>
 									</div>
 									<div class="fbox-content">
-										<h3>Track your content</h3>
-										<p>Our unique database-less paradigm shift platform means that your website, content, programming and graphics are all stored neatly organized folders.</p>
+										<h3><?php item_r('Heading', $item, $page); ?></h3>
+										<p><?php item_r('Text', $item, $page); ?></p>
 									</div>
 								</div>
-							</div>
-							<div class="col-lg-6">
-								<div class="feature-box fbox-plain fbox-dark">
-									<div class="fbox-icon">
-										<a href="<?php echo $amadeusUrl; ?>#no-limits-to-html-and-php"><i class="icon-et-global"></i></a>
-									</div>
-									<div class="fbox-content">
-										<h3>Anything is Possible</h3>
-										<p>Since we are built on top of modern web technologies like html5 and php, the sky truly is the limit on whats possible to extend in your website.</p>
-									</div>
-								</div>
-							</div>
-							<div class="col-lg-6">
-								<div class="feature-box fbox-plain fbox-dark">
-									<div class="fbox-icon">
-										<a href="<?php echo $amadeusUrl; ?>#great-themes"><i class="icon-et-megaphone"></i></a>
-									</div>
-									<div class="fbox-content">
-										<h3>Great Themes</h3>
-										<p>Themes take a couple of hours to convert and setup and you can pay designers for great themes as is your wont. Our's is <a href="themes.semicolonweb.com/html/canvas/demo-media-agency.html" target="_blank">by Canvas</a>.</p>
-									</div>
-								</div>
-							</div>
-							<div class="col-lg-6">
-								<div class="feature-box fbox-plain fbox-dark">
-									<div class="fbox-icon">
-										<a href="<?php echo $amadeusUrl; ?>#benchmarking"><i class="icon-et-tools"></i></a>
-									</div>
-									<div class="fbox-content">
-										<h3>Blazing Fast</h3>
-										<p>We can optimize html themes based on lighthouse reports and our own framework is hardly 10kb (yes kilo bytes) and loads in under one tenth of a second.</p>
-									</div>
-								</div>
-							</div>
+							</div><?php } ?>
 
 							<div class="w-100 bottommargin-sm"></div>
 
