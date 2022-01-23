@@ -2,11 +2,16 @@
 Services	Heading	We are YieldMore Services,<br>Web Consulting Agency,<br>Based in Chennai, India.
 Services	Intro	Newly established, we provide web development services to <a href="../services/#why-conscious">Conscious Businesses</a>, offering them to be a part of our <a href="../network/" target="_blank">"Yield More Love" Network</a>. We work primarily in our own platform "<a href="../amadeus/">Amadeus CMS</a>" a powerful tool for programming any html template found online. We can extend our core team / train your staff / volunteers as required.
 Services	ContactCTA	#contact-us
-Services	SvcsHeading	Our Offering
-Services	Features	Our unique database-less paradigm shift platform means that your website, content, programming and graphics are all stored neatly organized folders.	Track your content	#one	desktop
-Services	Features	Since we are built on top of modern web technologies like html5 and php, the sky truly is the limit on whats possible to extend in your website.	Anything is Possible	#no-limits	global
-Services	Features	Themes take a couple of hours to convert and setup and you can pay designers for great themes as is your wont. Our's is <a href="//themes.semicolonweb.com/html/canvas/demo-media-agency.html" target="_blank">by Canvas</a>.	Great Themes	#great-themes	megaphone
-Services	Features	We can optimize html themes based on lighthouse reports and our own framework is hardly 100Kb (yes kilo bytes) and loads in under one tenth of a second.	Blazing Fast	#benchmarking	tools
-!Services	Features			#great-themes	megaphone
-Amadeus	Heading	We are Amadeus Consultants - yada yada ya.
-Amadeus	SvcsHeading	Features of <a href="../amadeus/">Amadeus</a>
+Services	ServicesHeading	Our Offerings / IT Consulting
+Services	Services	Ideation and Strategy	AM Concerto	#great-themes	tools
+Services	Services	Website Creation - Content, Theming, Design and Development	AM Web and Sunlight	#great-themes	global
+Services	Services	Digital Marketing Services	AM Outreach	#great-themes	megaphone
+Services	Services	Enange on Social Media and with a Community	AM Engage and Symphony	#great-themes	desktop
+Amadeus	Heading	Sophisticated Crafting.
+Amadeus	Intro	[sample intro message]
+Amadeus	ContactCTA	#contact-us
+Amadeus	ServicesHeading	Features of <a href="../amadeus/">Amadeus</a>
+Amadeus	Services	Our unique database-less paradigm shift platform means that your website, content, programming and graphics are all stored neatly organized folders.	Track your content	#one	desktop
+Amadeus	Services	Since we are built on top of modern web technologies like html5 and php, the sky truly is the limit on whats possible to extend in your website.	Anything is Possible	#no-limits	global
+Amadeus	Services	Themes take a couple of hours to convert and setup and you can pay designers for great themes as is your wont. Our's is <a href="//themes.semicolonweb.com/html/canvas/demo-media-agency.html" target="_blank">by Canvas</a>.	Great Themes	#great-themes	megaphone
+Amadeus	Services	We can optimize html themes based on lighthouse reports and our own framework is hardly 100Kb (yes kilo bytes) and loads in under one tenth of a second.	Blazing Fast	#benchmarking	tools

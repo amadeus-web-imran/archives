@@ -1,5 +1,5 @@
 <?php
-$theme = cs_var('theme_url'); $amadeusUrl = './amadeus-cms/';
+$theme = cs_var('theme_url');
 $page = get_page_sections('Services');
 ?>
 		<!-- Content
@@ -20,9 +20,9 @@ $page = get_page_sections('Services');
 
 					<div id="section-services" class="page-section">
 
-						<h2 class="mb-5"><?php area_r('SvcsHeading', $page); ?></h2>
+						<h2 class="mb-5"><?php area_r('ServicesHeading', $page); ?></h2>
 
-						<div class="row col-mb-50 mb-0"><?php foreach ($page->byArea['Features'] as $item) {?>
+						<div class="row col-mb-50 mb-0"><?php foreach ($page->byArea['Services'] as $item) {?>
 
 							<div class="col-lg-6">
 								<div class="feature-box fbox-plain fbox-dark">
