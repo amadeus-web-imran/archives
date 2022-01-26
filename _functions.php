@@ -173,7 +173,7 @@ function site_humanize($text) {
 		'brics' => 'BRiCS',
 		'see-learning' => 'SEE Learning',
 		'nom' => 'Project Nom',
-		'education-faqs' => 'Education [Project Nom] FAQs',
+		'faqs' => 'FAQs',
 		//'' => '',
 				]) {
 		$key = urlize($text);

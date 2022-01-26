@@ -1,0 +1,42 @@
+		<section id="content" class="yms">
+			<div class="content-wrap">
+
+				<div id="section-amadeus" class="container-fluid page-section clearfix">
+
+					<div class="hero-headline bottommargin">
+						<h1>Team Model</h1>
+						<span>This is the team and collaboration model of both YM Services and the YML Network</span>
+					</div>
+
+<h1>Introduction</h1>
+
+I first outlined the RMI Framework in Dec 2012 when I was invited to build a Roster Manager for an american football league. That page is temporarily down as I struggle to find the time to import cselian.com/blog/ into Amadeus.
+
+We then took that idea back to the drafting board in 2020 mid with #Panishq and are not trying it in this new avatar Yield More Services.
+
+<h1>Guidelines (for Team Collaboration)</h1>
+
+Created with inputs from 2 friends back in October / November 2021, heres the skeleton of this model.
+
+1. **Effort x Value = Remuneration** for that Individual (for that type of work done). Ideas can have an initial value and it's value can be updated as the project enters predetermined phases. This value to be encashed at the end of each phase / pro rata at the time of Termination.
+
+2. **Revenue - Operations = Income**
+If Income < Remuneration, remuneration is paid first (in ratio of total value to efforts put in) until we are break even. This also, done monthly.
+
+3. **When Income > Remuneration**, 20% is kept for plough back (reserve) and remaining is distributed equally by all who are on the rolls, to be paid out every month.
+
+4. **Fully Committed** - while this doesn't mean full time, and in some cases, persons may wish to remain anonymous, fully committed means they have spend atleast 2 weeks actively contributing and thats their "Date of Joining".
+
+5. **Termination** - If 1 lakh is reserve at the time that someone wants out, we factor in months spent to arrive at an exit bonus. If 6 members "fully committed" have together spend X say 30 months with us and the person exiting has spend Y say 10 months with us, then X/Y or 10 / 30 of the reserve is paid out to him or her. Further commissions for ideas / bankrolling ONLY to be given after exit.
+
+6. **Not break even** at time of Termination. Money to be paid within 6 months. Or half by 12 months, after which its written off.
+
+7. **Expenses, Essentials and Advances** - to be handled on a per case basis by majority vote of the entire team except the one requesting it. If deadlocked at 50% vote, the case is passed.
+
+8. **Bonus amount** - This to accrue as "remuneration pending" based on worth of the individual's contribution / ideas.
+
+9. **Pre Payback Termination** - If X joins tomorrow and receives Y hours of training from the Team in total - they owe back that many hours billable / in exchange for their time before they are fully out.
+
+				</div>
+			</div>
+		</section><!-- #content end -->
