@@ -1,6 +1,6 @@
-<h2>Entitlement</h2>
+# Entitlement
 
-<h3>Problem Statement</h3>
+## Problem Statement
 
 In our grandparents generation, people were preoccupied with the War Effort and mass communication was limited or one way.
 
@@ -20,7 +20,7 @@ Poverty, lack of access to food, water, education, human trafficking, the refuge
 
 <hr />
 
-<h3>A Teacher's Perspective</h3>
+## A Teacher's Perspective
 
 In my class I have 20 children. Some rich, some poor, some given freedoms, some stifled. I've seen enough of humanity to know that nothing is black and white.
 
@@ -32,5 +32,7 @@ I only wish that today's children could break down the barriers between their cl
 
 Dear parents, do introspect within and among yourselves, find out what Entitlement means to you, what you really want for your kids and open them up to thw joy of seeing the world in Evolving Sunlight.
 
-<h3>Conclusion</h3>
+## Conclusion
 Its our choice to make our children socially / globally conscious - something for which I would ask you to reflect on <a href="https://worldslargestlesson.globalgoals.org/" target="_blank">#envision2030</a> (<a href="https://www.un.org/development/desa/disabilities/envision2030.html" target="_blank">by the UN</a>)
+
+Imran, Jan 2021

@@ -20,7 +20,7 @@ $articles = $year == 2021 ? [
 	'areas/learn/evolve/sunlight',
 ] : [
 	'ideas/articles/imran/why-conscious',
-	'areas/learn/education/creative-expression',
+	'areas/learn/educational-programs/creative-expression',
 ];
 foreach ($articles as $item) {
 	$bits = explode('/', $item);

@@ -15,6 +15,7 @@ bootstrap(array(
 
 	'byline' => 'Triggering Dialogue and Action',
 	'footer-message' => 'To provide online resources that inspire and assist and <b>access to people who care</b>',
+	'above-footer-message' => 'We have the simple mission of connecting people, sharing ideas and creating a platform for collaboration, while promoting our own ideas and programs for celestial harmony and a new spirit of oneness.',
 	'start_year' => 2013,
 
 	'version' => [ 'id' => '011', 'date' => '23 Jan 2022' ],

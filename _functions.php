@@ -168,7 +168,19 @@ function did_render_page() {
 	return false;
 }
 
-//'nom-resources' => 'Nom Resources for Parents and Teachers',
+function site_humanize($text) {
+	if ($match = [
+		'brics' => 'BRiCS',
+		'see-learning' => 'SEE Learning',
+		'nom' => 'Project Nom',
+		'education-faqs' => 'Education [Project Nom] FAQs',
+		//'' => '',
+				]) {
+		$key = urlize($text);
+		if (isset($match[$key])) return $match[$key];
+	}
+	return $text;
+}
 
 function section_banner($section = false, $fwe = false, $return = false) {
 	if ($section && in_array('jpg', explode(', ', $section['extensions']))) return;
@@ -235,8 +247,8 @@ function print_sections_menu($only_fol_menu = false) {
 
 	$section = cs_var('section');
 	if ($only_fol_menu) {
-		echo $sitemap ? '' : '		<h2 class="selected">Section Menu</h2>' . $nl;
-		echo $sitemap ? '<ol>' : '<div class="section-menu">';
+		echo $sitemap ? '' : '		<h1 class="heading">Section Menu</h1><div class="row">' . $nl;
+		echo $sitemap ? '<ol>' : '<div class="section-menu col-md-6 col-sm-12"><h3>Section Folders</h3>';
 
 		$last_file = '';
 		if (!$sitemap && cs_var('parentFol')) {
@@ -249,7 +261,7 @@ function print_sections_menu($only_fol_menu = false) {
 				}
 				$last_file = $fwe;
 			}
-			echo '<hr class="menu-separator" />';
+			echo $sitemap ? '' : '</div><div class="section-menu col-md-6 col-sm-12 menu-separator"><h3>Folder Pages</h3>';
 		}
 
 		$last_file = '';
@@ -285,7 +297,7 @@ function print_sections_menu($only_fol_menu = false) {
 	foreach (cs_var('sections') as $id) {
 		$s = section_info($id);
 		if (($s['slug'] == 'supraja' || $s['slug'] == 'scripts') && (!$section || $section['slug'] != $s['slug'])) continue;
-		echo $sitemap ? '' : '	<div class="col-md-3 col-sm-6 col-12">' . $nl;
+		echo $sitemap ? '' : '	<div class="col-md-3 col-6">' . $nl;
 		echo $sitemap ? '<li>' . $s['name'] . '<ol>' : '		<h2>' . $s['name'] . '</h2>' . $nl;
 		$path = cs_var('path') . '/content/' . $s['slug'] . '/';
 		$files = scandir($path);
