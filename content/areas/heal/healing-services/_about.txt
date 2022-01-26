@@ -1,0 +1,1 @@
+ <div class="banner"><a href="http://positivewings.com/"><img src="../content/areas/heal/healing-services/assets/positive-wings.jpg" class="img-fluid" /></a></div>
