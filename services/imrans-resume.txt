@@ -1,0 +1,208 @@
+		<section>
+			<div class="content-wrap">
+
+				<div id="section-amadeus" class="container-fluid page-section clearfix">
+
+					<div class="hero-headline bottommargin">
+						<img src="../services/assets/ianamazi.jpg" width="150" style="float: right; padding: 4px; border: 1px solid grey; background-color: #fff; margin: 0 8px;"
+						 /><span>Curriculum Vitae (CV) or R&eacutesum&eacute of</span>
+						<h1>Imran Ali Namazi</h1>
+						<i>Software Developer / Solution Architect</i> from Chennai, India.
+						<a href="tel:+919841223313">+91-98412-23313</a> / <a target="_blank" href="mailto:team@yieldmore.org">team@yieldmore.org</a> / Resume: <a href="https://yieldmore.org/imrans-cv/">yieldmore.org/imrans-cv/</a>
+		</div>
+
+<div id="content">
+	<h1>Personal Statment</h1>
+	<p>An extraordinarily talented programmer, engineer, writer, concerned citizen and friend, I have always let my work stand out as an example of the creativity and passion that I bring. I began <a target="_blank" href="https://2005.cselian.com/electronics/wesc.html">building circuits</a> in <a target="_blank" href="https://2005.cselian.com/electronics/speedo.html">1999</a> and <a target="_blank" href="https://2005.cselian.com/documents/Imran_Portfolio_Software.pdf">took to VB6</a> in <a href="https://www.angelfire.com/rock3/ivy/">2000</a>, <a target="_blank" href="https://2005.cselian.com/profiles/index.html">graduating in 2005</a>.</p>
+	 <p>Having refined the craft over 20 years spanning vb6, Net, php, winforms, wpf, active directory, C#, Javascript, Google cloud, Asp.net, VueJS Typescript and a patch of Augmented Reality and Netsuite, I've worked in domains like Education and Professional Development for the teaching force, ERP, Loan Application and Servicing, built Community Apps, Mobile Apps, Progressive Web apps, and have <a target="_blank" href="https://amadeus.yieldmore.org">my own php microframework that's so artistic, I decided to name it after Mozart</a>.</p>
+	 <p>Having led architectural efforts for over 15 years, I'm currently building a Communication Center in Typescript and Cosmos DB, have built report frameworks and have a good sense of things as a full stack developer.</p>
+	 <p>A budding writer, <a target="_blank" href="https://imran.yieldmore.org/poems/">I've penned over 400 poems</a> and teach creative expression and web design at <a target="_blank" href="https://cascadefls.org/">cascade</a>. I also spend time <a target="_blank" href="https://legacy.yieldmore.org/sitemap/">compiling articles</a> and network with <a target="_blank" href="https://realms.yieldmore.org/">like minded society stirrers</a> at my website <a target="_blank" href="https://yieldmore.org/sitemap/">yieldmore.org (since 2013)</a>, where I'm known as a "<a target="_blank" href="https://www.linkedin.com/in/ianamazi/">one world and social causes theorist</a>".
+	
+	<h1 align="left">My Qualities</h1>
+	<ul style="padding: 0;">
+		<li>I quickly assess the project and involve you in the parts that are complex or critical.</li>
+		<li>Experience has taught me that its the simple things and attention to detail that makes good software great. I believe in well engineered, performant solutions that are intuitive and easy to use.</li>
+		<li>Apart from doing core development and leading teams, I can be retained for training and technical overseeing/guiding projects being done by other teams</li>
+	</ul>
+	<p>Some of the <b>qualities</b> I possess:</p>
+	<ul style="padding: 0;">
+		<li><b>Grasp</b> - able to get up to speed quickly / think of implications</li>
+		<li><b>Communication</b> - strong, able to quickly understand business context</li>
+		<li><b>Diligence</b> - particular attention to detail, code organization</li>
+		<li><b>Intuition</b> - knowing when consultation or clarification is required</li>
+		<li><b>Attitude</b> - energetic, resourceful, methodical and earnest</li>
+		<li><b>Leadership</b> - encouraging, removing obstacles, listening and building rapport</li>
+	</ul>
+	
+	<h1>Qualification</h1>
+	<p>B.E / Electrical &amp; Electronics Engineering <b>Nov 2005</b>
+	KCG College of Technology (Anna University) - Chennai.</p>
+	<p>Lady Andal School <b>Apr 2001</b></p>
+	
+	<h1>Work Experience</h1>
+	<p>Overall: 16 years of work experience in .Net/sql with web and windows applications, 10 years experience with php and 6 years as a hobbyist with electronics/vb6 before I started my career in 2006.</p>
+	
+	<p>I've built frameworks, researched technologies, led infrastructure and training efforts, lead teams technically done customer & requirements handling and managed projects.</p>
+	
+	<p>I Have a plethora of codebases <a target="_blank" href="https://bitbucket.org/yieldmore/">mostly open source / source available</a>,
+	  <span class="link" style="display: none;">(https://bitbucket.org/yieldmore/)</span>
+	and a few at <a target="_blank" href="https://github.com/yieldmore/">github</a>.
+	  <span class="link" style="display: none;">(https://github.com/yieldmore/)</span></p>
+	
+	<p id="tech-list"><b>Technologies and Frameworks</b>:
+	  <u>Web</u>: PHP, Html, Javascript, jQuery, Firebase, Css, Durandal, Knockout, Vue JS, Typescript, Webpack and NPM.
+	  <u>.Net</u>: Asp.Net, Asp MVC, WinForms, ORM (Entity Framework, EFCore and NHibernate) WCF, WPF, MS SQL and Cosmos Db. File-Based CMSes
+	</p>
+	
+	<h2>Since 2020 Aug</h2>
+	<p>Worked on a complete mobile revamp of a consumer - service provider matching platform, built in VueJS, TypeScript and Asp.Net Core, with a full hands on write of the architecture and infrastructure layers, setting a new coding standard in that company. Also devised a sophisticated way for them to build multiple mobile apps from a single code base, created webpack and node libraries etc.</p>
+	<p>Working on a scalable and comprehensive Communications Center with Team Visibility and Lead Tracking that integrates message providers like whatsapp and Google My Business.</p>
+	<p>Built <a href="https://bitbucket.org/yieldmore/amadeus/src/" target="_blank">Amadeus (see source)</a> into a flexible, clean php web builder which uses NO Database and <b>am actively seeking clients</b> for it.</p>
+	<p>Built websites for <a href="https://cascadefls.org" target="_blank">Cascade FLS</a> and <a href="https://awakentolife.org" target="_blank">Awaken To Life</a>.</p>
+	<p>Reworked the content and presentation of <a href="https://yieldmore.org" target="_blank">YieldMore.org</a></p>
+	<p>As CoFounder of Panishq.com, built an 3d Augmented Reality solution using aframe and firebase, and a hyperlocal marketplace prototype.</p>
+	<p>Conceived, piloted and taught 2 educational programs viz <a href="https://yieldmore.org/curation-based-education/" target="_blank">CBE</a> and <a href="https://yieldmore.org/creative-expression/" target="_blank">CX</a> at Cascade as a course developer and teacher of an Adolescent Group</p>
+	
+	<h2><a target="_blank" href="https://headstreamtech.com">Headstream Technologies</a></h2>
+	
+	<p>In the Education Space, Edlusion provides a platform for Teacher Evaluation, Training and Professional Development, using Modern Rubrics and pedagogy for K-12 in the United States. We used technologies like EDFI, SCORM and A/B Testing (Google Optimize)</p>
+	
+	<p><b>Architect</b>. Tenure: 2016 Aug - 2020 Aug
+	
+	<p>Worked with Durandal and knockout (old rivals to Angular)</>
+	<p>In charge of code reviews, tech spec discussions and core development.</p>
+	<p>Spearheaded Product Revamp in 2017 writing a fresh javascript architecture.</p>
+	<p>Wrote an elegant, performant, well architected Report Framework in 2018 over 6 months.</p>
+	
+	<h2><a target="_blank" href="https://cselian.com/">Cselian Tech</a> (Freelance)</h2>
+	<p>Position: Founder & <b>Lead Developer</b>. Tenure: Nett time 3 years since 2005
+	Technologies: Yii / php / jquery / wordpress / .Net.</p>
+	
+	<p>As an individual, I can <a target="_blank" href="https://cselian.com/" target="_blank">work for you</a>. My personal and freelance projects list is over 50 and can be had on request.</p>
+	
+	<h3>Project: YieldMore.org</h3>
+	
+	<p>have build 2 wordpress websites for <a href="https://yieldmore.org/" target="_blank">YieldMore.org</a> creating extensive plugins, now rebuilt using Amadeus and compiled over 100 articles, authored another 20 pages and made some 30 youtube videos <a href="https://legacy.yieldmore.org/video" target="_blank">including this</a>.</p>
+	
+	<h3>Charities: Spanda, JFD, BIG etc</h3>
+	<p>Have built websites, written content and helped make videos for spanda.org, jobs for dyslexics and Build India Group.</p>
+	
+	<h3>Project: Constient Global Solutions (Feb 2016 to May 2016)</h3>
+	
+	<p>Played Sr Developer Role on 2 projects built in asp.net and Web Api.</p>
+	
+	<h3>Project: Identity Management - EF.com (Jul 2014 to Nov 2015)</h3>
+	
+	<p>Enhance a .Net ticketing system's new user page and build a system of workflows around user management including Active Directory integrations.</p>
+	
+	<h3>Project: intermart (eVend)- B2B ecommerce (2012, 13)</h3>
+	
+	<p>Built a B2B ecommerce site in Yii with catalogues per Buyer site, map of deliveries of day, auto assign nearest distributor and Axis Gateway payment.</p>
+	
+	<div class="page-footer" style="margin-bottom: 40px"><span>resume of Imran@cselian.com (1/3)</span></div>
+	
+	<h3>Projects: <a target="_blank" href="https://github.com/ImranCS/MicroVC/" target="_blank">MicroViC</a> / Wordpress / WooCommerce</h3>
+	
+	<p><a target="_blank" href="https://jsswindia.com/">Journal of School Social Work</a> is built in my own cms MicroViC - lately with Google Custom Search and Scholar. <a target="_blank" href="https://spanda.org/">Spanda</a>, <a target="_blank" href="https://sassymediagroup.com">Sassy</a> and <a target="_blank" href="https://iscindia.net">Interlink</a> are built with wordpress with some plugins for making life simple and clean. <a target="_blank" href="https://idamlifestyle.com">IDAM</a> is my first woocommerce site.</p>
+	
+	
+	<h2><a target="_blank" href="https://groupfmg.com/">Group FMG</a></h2>
+	<p><b>Senior Tech Lead</b>. Tenure: Sep 2013 - June 2014
+	
+	<p>Worked for blinkx.com in php (Kohana / Laravel) on a new Ad displaying product.</p>
+	<p>Worked on a catalog website in Wordpress for an energy saving company.</p>
+	
+	<h2><a target="_blank" href="https://appdev.be">Applied Development</a></h2>
+	<p>Position: <b>Technical Lead</b>. Tenure: Aug 2008 - Jun 2013
+	Technologies: Winforms / .Net 3.5, 4.0 / WPF / NHibernate / MS SQL 2008.</p>
+	
+	<p>A 10 year old IT company based in Belgium with a development centre in Chennai.</p>
+	
+	<h3>Project: Document Writing - VSTO / WPF</h3>
+	
+	<ul>
+	<li>Setup infrastructure and responsible for many of the features, screens, outline readers etc.</li>
+	<li>Responsible for discussing / documenting Functional requirements ensuring timely delivery.</li>
+	</ul>
+	
+	<h3>Project: Service Management - Winforms / ADO.Net</h3>
+	
+	<ul>
+	<li>Created a fluent ORM that uses expressions and wraps ado.net and includes data binding.</li>
+	<li>Built the application that uses this with judicious use of generics and code generation.</li>
+	</ul>
+	
+	<h3>Project: Financial - Silverlight / WCF</h3>
+	
+	<ul>
+	<li>Member of core framework group, responsible for server architecture spanning Wcf, Nhibernate, Linq.</li>
+	<li>Responsible for coordinating with Business owners and ensuring quality of code.</li>
+	</ul>
+	
+	<h3>Project: ERP - Winforms</h3>
+	
+	<p>Responsibilities:</p>
+	<ul>
+	<li>Lead developer responsible for training and maintaining team of 6 members.</li>
+	<li>Coordinate with architect and make enhancements to framework.</li>
+	<li>Developed a legacy code explorer to aid the analysis and track the conversion.</li>
+	</ul>
+	
+	<h2 class="break-at"><a target="_blank" href="https://photon.in">Photon Infotech Pvt Ltd</a></h2>
+	<p>Position: <b>Software Engineer</b>. Tenure: Mar 2006 - Aug 2008
+	Technologies: Asp.net, HTML / CSS / Javascript, SQL 2005</p>
+	
+	<h3>Client: Englishtown (An EF Company)</h3>
+	<p>Jun 2006 - Aug 2008</p>
+	
+	<p>Englishtown is the world's largest English e-learning website with millions of students. Ten years old, it has tie-ups with partners for co-branding and corporate training.</p>
+	
+	<p><u>Responsibilities and Roles</u>:</p>
+	<ul>
+	<li>Lead developer for Community Project (team of 5)</li>
+	<li>Good understanding of whole Englishtown - part time guide for other projects.</li>
+	<li>Troubleshooting User Interface / .Net / application specific problems</li>
+	<li>Release process (TFS / CI) and issue resolution. Designed some applications / db scripts used in this.</li>
+	</ul>
+	
+	<div class="page-footer" style="margin-bottom: 40px"><span>resume of Imran@cselian.com (2/3)</span></div>
+	
+	<h3>Project: Community (Social networking application)</h3>
+	<p>Feb 2007 - Aug 2008</p>
+	<ul>
+	<li>Online community for members of englishtown.com. Post profile, search and add friends, send messages and chat.</li>
+	<li>Led a 5-member team, adopting a new EF wide framework built many parts including the Admin area, contact importing, new slick office style menu bar and high-traffic message center.</li>
+	</ul>
+	
+	<h3>Project: Sales pages</h3>
+	<p>Jun 2006 - Feb 2007</p>
+	<ul>
+	<li>Unify and revamped the sales module for all global markets with new pages, email campaigns, adding time bound banners etc.</li>
+	<li>Redesigning pages, fixing bugs, creating dynamic pages, changing promotions etc.</li>
+	<li>Recognised as an asset, would initiate project setup, environment synch, and worked on tools for the release process.</li>
+	</ul>
+	
+	<h1>College / Projects:</h1>
+	<ul>
+	<li>School Alumni site (cakephp) / FTP sync tool for its deployment (Oct 2007).</li>
+	<li>Developed <a target="_blank" href="https://2005.cselian.com/home/">2005.cselian.com/home/</a>, learning CSS on the way (Apr - Jun 2005).</li>
+	<li>Guide for project interfacing mobile phone / micro-controller / PC (Feb - Apr 2006).</li>
+	<li>100+ hours of EDA design, ALP &amp; PCB manufacture for <a href="https://2005.cselian.com/electronics/" target="_blank">electronics projects</a>.</li>
+	<li>Installation of tower clocks for <a target="_blank" href="https://ganiandsons.com">Gani & Sons</a> and electronics design for some of their clocks.</li>
+	<li>Recognized as "Microsoft Student Champ" (Jan 2004 - May 2005).</li>
+	</ul>
+	
+	<h1>Personal details:</h1>
+	<ul>
+	  <li>Date of Birth: 15<sup>th</sup> October 1983.</li>
+	  <li>Marital Status: Single.</li>
+	  <li>Hobbies and Interests: Programming, reading, writing, basketball, metaphysics and the like, 
+	  and good old prog-rock music (or any old rock)</li>
+	</ul>
+	
+	  </div>
+</div>
+
+				</div>
+			</div>
+		</section><!-- #content end -->

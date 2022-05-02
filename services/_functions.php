@@ -6,7 +6,7 @@ cs_vars([
 	'safeName' => 'yieldmore-services',
 
 	'byline' => 'Growing In Harmony',
-	'footer-message' => 'Empowering Communities <b>with digital and media services</b>',
+	'footer_post_credits' => '<br />Empowering Communities <b>with digital and media services</b>',
 	'start_year' => false,
 	'theme' => 'cv-media-agency',
 	

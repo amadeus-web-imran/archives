@@ -12,7 +12,11 @@
                     </a></li>
                     <li class="tm-nav-item"><a href="<?php echo cs_var('url');?>sitemap/" class="tm-nav-link">
                         <i class="fas fa fa-sitemap"></i>
-                        Sitemap
+                        YMLN Sitemap
+                    </a></li>
+                    <li class="tm-nav-item"><a href="<?php echo cs_var('url');?>search/" class="tm-nav-link" title="google programmable search engine">
+                        <i class="fas fa fa-search"></i>
+                        GPSE Searches
                     </a></li>
                     <div class="holds-menu-contents"></div>
                     <li style="list-style-type: none; padding-bottom: 20px;">

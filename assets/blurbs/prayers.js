@@ -21,7 +21,6 @@ data['2010'] = new Array(
 	"<li>determination</li>",
 	"<li>freedom</li>",
 	"<li>understanding</li>",
-	"<li>well being</li>",
 	"<li>health</li>",
 	"<li>happiness</li>",
 	"<li>spirit</li>",
@@ -29,7 +28,6 @@ data['2010'] = new Array(
 	"<li>relief</li>",
 	"<li>refuge</li>",
 	"<li>balance</li>",
-	"<li>strength</li>"
 );
 
 data['chakras'] = new Array(

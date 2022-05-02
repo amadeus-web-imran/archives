@@ -1,3 +1,18 @@
+<div class="row mb-20 contact">
+	<div class="col-md-12"><h2>Mustafa Badsha</h2></div>
+	<div class="col-md-4">
+		<a class="autosize icon-whatsapp" href="//wa.me/+919840023721">+91 98400 23721</a>
+	</div>
+	<div class="col-md-4">
+		<a class="autosize icon-phone" href="tel:+919840023721">+91 98400 23721</a>
+	</div>
+	<div class="col-md-4">
+		<a class="autosize icon-email" href="mailto:badshasalamath@gmail.com" target="_blank">badshasalamath@gmail.com</a>
+	</div>
+</div>
+
+<hr />
+
 <a class="g-doc" href="https://docs.google.com/document/d/1EGZWGOlUBgZqeRUTmLpSYOV7aslrD25EUfwbiWAASrk/edit?usp=sharing" target="_blank">Open the Profile of Mustafa Badsha</a>
 
 <div class="row">
@@ -34,10 +49,4 @@
 			<li>Grooming aspiring individuals to become responsible and accountable leaders</li>
 		</ol>
 	</div>
-</div>
-
-<hr />
-
-<div class="enabler-cta">
-	<a class="name" href="tel:+919840023721">for further details<wbr />, contact:<wbr /><nobr>MUSTAFA BADSHA</nobr> <nobr>on 98400 23721</nobr></a>
 </div>
