@@ -5,15 +5,15 @@ function active_if($node) {
 	if (cs_var('node') == $node || $folder) echo ' active';
 }
 
-cs_var('sections', ['areas', 'drive', 'ideas', 'about']);
+cs_var('sections', ['areas', 'dimensions', 'drive', 'ideas', 'about']);
 cs_var('long-folders', ['', 'quran','sri-aurobindo','gita', 'jesudas', 'chinmaya', 'jeevan-vidya', 'jeevan-vidya-hindi']);
 //	['name' => 'C. Conception',	'slug' => 'supraja','extensions' => 'mp3, png, jpg, txt, pdf', 'subfolder' => true],
 //	['name' => 'Resources',	'slug' => 'data', 		'extensions' => 'tsv'],
 
 function section_info($id) {
 	$r = ['name' => humanize($id), 'slug' => $id, 'extensions' => 'txt', 'subfolder' => true];
-	if ($id == 'drive') $r['extensions'] = 'mp3, png, jpg, txt, pdf';
-	if ($id == 'about') $r['extensions'] = 'txt, php';
+	if ($id == 'drive') $r['extensions'] = 'mp3, mp4, png, jpg, txt, pdf';
+	if ($id == 'about') $r['extensions'] = 'txt, png, php';
 	return $r;
 }
 
@@ -123,6 +123,11 @@ function did_render_page() {
 			($isLeaf ? breadcrumb_r('node') : '') .
 			'</h1>';
 
+		echo '<div style="background-color: #C1FFD6; padding: 6px;">';
+		cs_var('subscribeSuffix', 'Also SEE: <a href="https://imran.yieldmore.org/" target=="_blank">IMRAN\'s Wrting</a>');
+		include_once '../imran/code/subscribe.php';
+		echo '</div>';
+
 		$about = cs_var('fol') . '_about.txt';
 		if (file_exists($about)) {
 			echo '<div class="box-colour-four">';
@@ -145,6 +150,8 @@ function did_render_page() {
 						echo 'TSV';
 					} else if ($e == 'mp3') {
 						echo sprintf('<audio class="full-width" width="300" height="27" preload="none" controls><source src="%s" type="audio/mp3"></audio>', $url);
+					} else if ($e == 'mp4') {
+						echo sprintf('<video class="full-width" width="300" preload="none" controls><source src="%s" type="video/mp4"></video>', $url);
 					} else if ($e == 'jpg' || $e == 'png') {
 						echo sprintf('<a href="%s" target="_blank"><br /><img alt="%s" class="full-width" src="%s" /></a>', $url, cs_var('node'), $url);
 					} else if ($e == 'txt' && ($extn == 'txt' || file_exists($file = $fwe . $e))) {
