@@ -9,11 +9,11 @@ $engines = [
 	//'four' =>['code' => '', 'name' => '', 'description' => ''],
 ];
 
-$id = cs_var('page_parameter1') ? cs_var('page_parameter1') : '';
+$id = am_var('page_parameter1') ? am_var('page_parameter1') : '';
 $engine = $engines[$id];
 
 foreach ($engines as $slug => $item) {
-	echo sprintf('%s<a href="%s" title="%s">%s</a>%s | ', $slug == $id ? '<b>' : '', cs_var('url') . 'search/' . ($slug ? $slug . '/' : ''), $item['description'], $item['name'], $slug == $id ? '</b>' : '');
+	echo sprintf('%s<a href="%s" title="%s">%s</a>%s | ', $slug == $id ? '<b>' : '', am_var('url') . 'search/' . ($slug ? $slug . '/' : ''), $item['description'], $item['name'], $slug == $id ? '</b>' : '');
 }
 
 ?>

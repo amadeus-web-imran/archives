@@ -1,4 +1,4 @@
-<?php if (!cs_var('mobile_app')) return; ?>
+<?php if (!am_var('mobile_app')) return; ?>
 
 <div class="footer-static-box if-can-use-pwa"><a href="javascript:installPWA();">Add YieldMore.org to the Home Screen</a>.</div>
 

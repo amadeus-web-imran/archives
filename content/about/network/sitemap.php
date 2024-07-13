@@ -1,5 +1,5 @@
 <?php
 print_sections_menu();
-cs_var('sitemap-called', true);
-cs_var('fol', false);
+am_var('sitemap-called', true);
+am_var('fol', false);
 ?>

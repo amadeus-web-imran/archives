@@ -1,5 +1,5 @@
 <?php
-cs_var('areas', [
+am_var('areas', [
 	//'start' => 		['abbr' => 'ST', 'text' => 'Start Browsing Areas of Interest', 'description' => ''],
 	'members' => 	['abbr' => 'HO', 'text' => 'The Yield More Love Network', 'description' => ''],
 	'explore' => 	['abbr' => 'XP', 'text' => 'Explore The Community', 'description' => ''],
@@ -9,25 +9,25 @@ cs_var('areas', [
 ]);
 
 function area_setup() {
-	$areas = cs_var('areas');
-	$node = cs_var('node');
+	$areas = am_var('areas');
+	$node = am_var('node');
 	if (!isset($areas[$node])) return;
-	cs_var('area', $areas[$node]);
+	am_var('area', $areas[$node]);
 }
 
 area_setup(); //safe to call here cause including after bootstrap
 
 function area_name() {
-	$area = cs_var('area');
+	$area = am_var('area');
 	if (!$area) return;
 	echo '<br /><em>' . $area['text'] . '</em>';
 }
 
 function area_links() {
-	$a = cs_var('area') ? cs_var('node') : 'home';
-	foreach (cs_var('areas') as $slug => $area) {
+	$a = am_var('area') ? am_var('node') : 'home';
+	foreach (am_var('areas') as $slug => $area) {
 		$sel = $a == $slug ? ' class="selected"' : '';
-		echo PHP_EOL . '<a' . $sel . ' href="' . cs_var('url') . $slug .'/">' . $area['text'] . '</a>';
+		echo PHP_EOL . '<a' . $sel . ' href="' . am_var('url') . $slug .'/">' . $area['text'] . '</a>';
 	}
 }
 

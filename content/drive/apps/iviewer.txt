@@ -1,4 +1,4 @@
-# IViewer [Download](../core/apps/IViewer-latest.zip)
+# IViewer [Download](../content/drive/apps/IViewer-latest.zip)
 
 ** A media player and organizer **
 

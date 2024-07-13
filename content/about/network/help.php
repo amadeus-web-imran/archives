@@ -4,7 +4,7 @@ Here at YM, we have a simplistic way of encouraging #DirectDonations to our volu
 yas_lembas();
 
 function yas_lembas() {
-	$link = '../' . cs_var('node') . '/';
+	$link = '../' . am_var('node') . '/';
 	$filter = [
 		'who'  => isset($_GET['who'])  ? $_GET['who']  : false,
 		'what' => isset($_GET['what']) ? $_GET['what'] : false,

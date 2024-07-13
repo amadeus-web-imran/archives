@@ -1,14 +1,9 @@
 <?php
-error_reporting(E_ALL);
-ini_set('display_errors', '1');
+//am_var('live', endsWith(__DIR__,'-live'));
+am_var('local', $local = $_SERVER['HTTP_HOST'] ==='localhost');
+am_var('mobile_app', true);
 
-include_once '../../amadeus/framework/core.php';
-
-//cs_var('live', endsWith(__DIR__,'-live'));
-cs_var('local', $local = $_SERVER['HTTP_HOST'] ==='localhost');
-cs_var('mobile_app', true);
-
-bootstrap(array(
+bootstrap([
 	'name' => 'The Yield More Love Network',
 	'safeName' => 'yieldmore',
 	'shortName' => 'YML',
@@ -25,35 +20,38 @@ bootstrap(array(
 	'uses' => 'search1, social1, footer-message', //TODO: turn these back on
 	'menu_active_class' => 'active', //TODO: 
 
-	'theme' => 'tm-xtra',
+	'theme' => 'biz-land', //TODO: tm-xtra
+	'folder' => '/content/',
 
 	'styles' => ['styles', 'mobile'],
 	'scripts' => ['contents'],
-	'head_hooks' => [__DIR__ . '/_ga.php', __DIR__ . '/mobile-app/head.php'],
-	'foot_hooks' => [__DIR__ . '/_ga.php', __DIR__ . '/mobile-app/foot.php'],
+	'head_hooks' => [SITEPATH . '/mobile-app/head.php'],
+	'foot_hooks' => [SITEPATH . '/mobile-app/foot.php'],
+	'social' => [
+	],
 
-	'url' => $local ? 'http://localhost/yieldmore/www/' : 'https://yieldmore.org/',
-	'path' => __DIR__,
+	'url' => $local ? 'http://localhost/subdomains/yieldmore/archives/' : '//archives.yieldmore.org/',
+	'path' => SITEPATH,
 	'no-local-stats' => true,
-));
+]);
 
-if (cs_var('mobile_app') && cs_var('node') == 'service-worker') {
+if (am_var('mobile_app') && am_var('node') == 'service-worker') {
 	header('Content-Type: application/javascript');
-	die(file_get_contents(__DIR__ . '/mobile-app/service-worker.js'));
+	die(file_get_contents(SITEPATH . '/mobile-app/service-worker.js'));
 }
 
 function is_multisite_section($slug) {
-	$fwe = cs_var('path') . '/' . $slug . '/' . cs_var('node');
+	$fwe = am_var('path') . '/' . $slug . '/' . am_var('node');
 	$extensions = ['.txt', '.php'];
 
 	foreach ($extensions as $extn) {
 		if (file_exists($fwe . $extn)) {
-			cs_var('fwe', $fwe);
-			cs_var('extn', $extn);
-			cs_var('file', $fwe . $extn);
-			cs_var('multisite_section', $slug);
-			cs_var('multisite_path', cs_var('path') . '/' . $slug);
-			cs_var('home_url', $slug . '/');
+			am_var('fwe', $fwe);
+			am_var('extn', $extn);
+			am_var('file', $fwe . $extn);
+			am_var('multisite_section', $slug);
+			am_var('multisite_path', am_var('path') . '/' . $slug);
+			am_var('home_url', $slug . '/');
 			return true;
 		}
 	}
@@ -64,12 +62,11 @@ function is_multisite_section($slug) {
 if (is_multisite_section('services'))
 	include_once 'services/_functions.php';
 else
-	include_once '_functions.php';
+	include_once 'functions.php';
 
 
 include_once 'content/about/network/_areas.php';
 
-load_amadeus_module('markdown');
-
 render();
 ?>
+

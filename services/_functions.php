@@ -1,7 +1,7 @@
 <?php
-cs_var('mobile_app', false);
+am_var('mobile_app', false);
 
-cs_vars([
+am_vars([
 	'name' => 'YieldMore Services',
 	'safeName' => 'yieldmore-services',
 
@@ -36,9 +36,9 @@ cs_vars([
 function before_render() { }
 
 function did_render_page() {
-	$section = cs_var('multisite_section');
-	$extn = cs_var('extn');
-	$file = cs_var('file');
+	$section = am_var('multisite_section');
+	$extn = am_var('extn');
+	$file = am_var('file');
 
 	if ($extn == '.php')
 		include_once $file;
@@ -49,9 +49,9 @@ function did_render_page() {
 }
 
 function get_page_sections($page) {
-	if (!($sm = cs_var('sitemap'))) {
+	if (!($sm = am_var('sitemap'))) {
 		$cols = true;
-		$rows = tsv_to_array(file_get_contents(cs_var('multisite_path') . '/page-sections.tsv'), $cols);
+		$rows = tsv_to_array(file_get_contents(am_var('multisite_path') . '/page-sections.tsv'), $cols);
 
 		$sm = new stdClass();
 		$sm->columns = $cols;
@@ -59,7 +59,7 @@ function get_page_sections($page) {
 
 		$sm->byPage = array_group_by($rows, $cols['Page']);
 		$sm->byArea = array_group_by($sm->byPage[$page], $cols['Area']);
-		cs_var('sitemap', $sm);
+		am_var('sitemap', $sm);
 	}
 
 	return $sm;

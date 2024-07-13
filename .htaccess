@@ -3,7 +3,8 @@
 </IfModule>
 
 <IfModule mod_rewrite.c>
-RewriteCond $1 !^(_cms\.php|assets|data|downloads|pages|supraja|mobile-app)
+RewriteCond $1 !^(index\.php|assets|data|downloads|pages|supraja|mobile-app|content)
 RewriteCond %{REQUEST_URI} !\.(pdf|mp4|mp3|jpg|png|xml|zip)$
-RewriteRule ^(.*)$ _cms.php/?%{QUERY_STRING}&node=$1 [L]
+RewriteRule ^(.*)$ index.php/?%{QUERY_STRING}&node=$1 [L]
 </IfModule>
+

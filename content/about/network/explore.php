@@ -1,11 +1,11 @@
 <?php
-$scriptUrl = cs_var('url') . cs_var('node') . '/';
-$scriptDataUrl = cs_var('url') . cs_var('section')['slug'] . '/_data/';
+$scriptUrl = am_var('url') . am_var('node') . '/';
+$scriptDataUrl = am_var('url') . am_var('section')['slug'] . '/_data/';
 
 $cols = 'object';
 $items = tsv_to_array(file_get_contents(__DIR__ .'/_data/explore.tsv'), $cols);
 
-$page = cs_var('page_parameter1');
+$page = am_var('page_parameter1');
 
 if ($page) {
 	$row = false;

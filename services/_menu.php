@@ -1,6 +1,6 @@
-<?php $baseUrl = cs_var('url');
+<?php $baseUrl = am_var('url');
 function data_href($section) {
-    if (cs_var('node') != 'index2') return;
+    if (am_var('node') != 'index2') return;
     echo 'data-href="'.$section.'" ';
 }
  ?>

@@ -1,5 +1,5 @@
 <?php
-$theme = cs_var('theme_url');
+$theme = am_var('theme_url');
 $page = get_page_sections('Services');
 ?>
 		<!-- Content
@@ -346,7 +346,7 @@ $page = get_page_sections('Services');
 
 									<abbr title="Phone Number"><strong>Phone:</strong></abbr> <?php echo sprintf('<a href="tel:%s">%s</a>', cs_sub_var('contact', 'tel'), cs_sub_var('contact', 'tel')); ?><br>
 									<abbr title="WhatsApp"><strong>WhatsApp:</strong></abbr> <?php echo sprintf('<a href="https://wa.me/%s" target="_blank">%s</a>', str_replace('+', '', str_replace('-', '', cs_sub_var('contact', 'tel'))), cs_sub_var('contact', 'tel')); ?><br>
-									<abbr title="Email Address"><strong>Email:</strong></abbr> <?php echo sprintf('<a href="mailto:%s?subject=Enquiry Reg. %s" target="_blank">%s</a>', cs_sub_var('contact', 'email'), cs_var('name'), cs_sub_var('contact', 'email')); ?>
+									<abbr title="Email Address"><strong>Email:</strong></abbr> <?php echo sprintf('<a href="mailto:%s?subject=Enquiry Reg. %s" target="_blank">%s</a>', cs_sub_var('contact', 'email'), am_var('name'), cs_sub_var('contact', 'email')); ?>
 								</div>
 							</div>
 
