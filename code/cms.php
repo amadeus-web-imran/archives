@@ -11,7 +11,7 @@ bootstrap([
 	'byline' => 'Triggering Dialogue and Action',
 	'footer-message' => 'To provide online resources that inspire and assist and <b>access to people who care</b>',
 	'above-footer-message' => 'We have the simple mission of connecting people, sharing ideas and creating a platform for collaboration, while promoting our own ideas and programs for celestial harmony and a new spirit of oneness.',
-	'footer_post_credits' => '<br />A "for greater good" <b><a target="_blank" href="https://realms.yieldmore.org/">realm</a></b> by <b><a target="_blank" href="https://yieldmore.org/services/">YieldMore Services</a></b>.',
+	'footer_post_credits' => '<br /><hr />A "for greater good" <b>[network](https://yieldmore.org)</a></b> built with a modern, elegant, [feature rich system](https://amadeusweb.com/)</b>.',
 	'start_year' => 2013,
 
 	'version' => [ 'id' => '011', 'date' => '23 Jan 2022' ],
@@ -23,6 +23,10 @@ bootstrap([
 	'theme' => 'biz-land', //TODO: tm-xtra
 	'folder' => '/content/',
 
+	'email' => 'team@yieldmore.org',
+	'phone' => '+919841223313',
+	'social' => [],
+
 	'styles' => ['styles', 'mobile'],
 	'scripts' => ['contents'],
 	'head_hooks' => [SITEPATH . '/mobile-app/head.php'],
@@ -30,7 +34,7 @@ bootstrap([
 	'social' => [
 	],
 
-	'url' => $local ? 'http://localhost/subdomains/yieldmore/archives/' : '//archives.yieldmore.org/',
+	'url' => $local ? 'http://localhost/yieldmore/archives/' : 'https://archives.yieldmore.org/',
 	'path' => SITEPATH,
 	'no-local-stats' => true,
 ]);

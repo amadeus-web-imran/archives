@@ -133,11 +133,12 @@ function did_render_page() {
 			breadcrumb_r('folName') .
 			($isLeaf ? breadcrumb_r('node') : '') .
 			'</h1>';
-
+	if (false) {
 		echo '<div style="background-color: #C1FFD6; padding: 6px;">';
 		am_var('subscribeSuffix', 'Also SEE: <a href="https://imran.yieldmore.org/" target=="_blank">IMRAN\'s Wrting</a>');
 		include_once '../imran/code/subscribe.php';
 		echo '</div>';
+	}
 
 		$about = am_var('fol') . '_about.txt';
 		if (file_exists($about)) {
