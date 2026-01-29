@@ -16,7 +16,11 @@ In this month I will record my ideas and articles on how you can colour your lif
 
 It all begins with a little journal. You can use ink, voice memos, a word file (I use google) or social media as you like.
 
+---
+
 In that diary, you can begin by sifting through the 12 aspects of our lives [outlined at MindValley](https://www.mindvalley.com/lifebook) and choose which ones form a healthy part of your life and which ones you would like to improve.
+
+DIV-LARGELIST
 
 1. Health & Fitness
 2. Intellectual
@@ -31,7 +35,11 @@ In that diary, you can begin by sifting through the 12 aspects of our lives [out
 11. Quality of Life
 12. Life Vision
 
+DIV-CLOSE
+
 You could set aside a page for each and write what it means to you / how you wish to seek improvement or share your abundance.
+
+---
 
 ## Music
 
@@ -51,6 +59,8 @@ Life is hard I know and sometimes we don't know know where to turn. But invest i
 
 Hang in there&hellip; you are special beyond measure&hellip; as this lady with the fork said "the best is yet to come".
 
+---
+
 ## Support Circle
 
 I hope you have friends and loved ones who can listen and make you laugh and hold your hand and offer a shoulder to cry on. Think who it is that makes your support circle, how they make you feel better, how you can repay them or pay it forward, helping those hapless souls who have no one to turn to.
@@ -65,6 +75,8 @@ Remember as [The Mother](http://2020.yieldmore.org/media/books/mirra-alfassa/) s
 > A new Light shall break upon the earth.
 > A new world shall be born
 > And the things that were promised shall be fulfilled'
+
+---
 
 ## Keep Smiling
 
@@ -92,6 +104,8 @@ Tomorrow we begin on affirmations and how to craft them.
 
 Imran, 1st August 2020
 
+---
+
 # Consolidation
 
 ## Problems
@@ -117,6 +131,8 @@ What is your life purpose? Set aside ample time to find out and look around you 
 
 Remember the progression Explore, Emote, Experience, Express. The journey begins with our keen observation and then finding something that we can connect with, something that moves us - that we can emote with. Expression is important for only then will we understand our purpose or what "[our verse](https://youtu.be/aS1esgRV4Rc)" can be.
 
+
+---
 
 ## Strength of Will and Dreaming
 
